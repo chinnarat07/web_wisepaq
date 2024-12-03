@@ -14,7 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -37,6 +37,7 @@ include "includes/db.php";
 //=include "includes/header.php";
 //=include "includes/navigation.php";
 ?>
+
 <body>
     <?php include("./includes/header.php")   ?>
 
@@ -187,7 +188,6 @@ include "includes/db.php";
     </div>
     <!-- About End -->
 
-
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -195,78 +195,92 @@ include "includes/db.php";
                 <h1 class="display-5 mb-5">Our Services</h1>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="">
+                <?php
+                $query = "SELECT * FROM service";
+                $fetch_data = mysqli_query($connection, $query);
+
+                if (mysqli_num_rows($fetch_data) == 0) {
+                    //echo "<h1 class='text-center'>No content Found</h1>";
+                } else {
+                    while ($Row = mysqli_fetch_assoc($fetch_data)) {
+                ?>
+                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="service-item">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="img/<?php echo $Row['service_img']; ?>" alt="">
+                                </div>
+                                <div class="p-4 text-center border border-5 border-light border-top-0">
+                                    <h4 class="mb-3 "><?php echo $Row['service_title']; ?></h4>
+                                    <p class="mb-0 "><b><?php echo $Row['service_topic']; ?></b></p>
+                                    <p class="text-start" style="text-indent: 2.5em;"><?php echo $Row['service_description']; ?></p>
+                                    <a class="fw-medium " href="">Read More<i class="fa fa-arrow-right ms-2 "></i></a>
+                                </div>
+                           
+                            </div>
                         </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">ENGINEERING</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-2.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Furniture Manufacturing</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-3.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Furniture Remodeling</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-4.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Wooden Floor</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                         <?php } ?>
+                    <?php } ?>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src="img/service-2.jpg" alt="">
+                            </div>
+                            <div class="p-4 text-center border border-5 border-light border-top-0">
+                                <h4 class="mb-3">Furniture Manufacturing</h4>
+                                <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                                <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-5.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Wooden Furniture</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-6.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Custom Work</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src="img/service-3.jpg" alt="">
+                            </div>
+                            <div class="p-4 text-center border border-5 border-light border-top-0">
+                                <h4 class="mb-3">Furniture Remodeling</h4>
+                                <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                                <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src="img/service-4.jpg" alt="">
+                            </div>
+                            <div class="p-4 text-center border border-5 border-light border-top-0">
+                                <h4 class="mb-3">Wooden Floor</h4>
+                                <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                                <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src="img/service-5.jpg" alt="">
+                            </div>
+                            <div class="p-4 text-center border border-5 border-light border-top-0">
+                                <h4 class="mb-3">Wooden Furniture</h4>
+                                <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                                <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src="img/service-6.jpg" alt="">
+                            </div>
+                            <div class="p-4 text-center border border-5 border-light border-top-0">
+                                <h4 class="mb-3">Custom Work</h4>
+                                <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                                <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -514,21 +528,21 @@ include "includes/db.php";
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pt-3" src="img/Sophos-Logo.jpg" alt="" >
+                            <img class="img-fluid pt-3" src="img/Sophos-Logo.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-3 pt-4 " src="img/vmware_workstation_logo.jpg" alt="" >
+                            <img class="img-fluid p-3 pt-4 " src="img/vmware_workstation_logo.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid" src="img/logitech.png" alt="" >
+                            <img class="img-fluid" src="img/logitech.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -536,144 +550,144 @@ include "includes/db.php";
                     <div class="team-item">
                         <div class="overflow-hidden position-relative text-center">
                             <img class="img-fluid pt-4" src="img/nutanixx.jpg" alt="">
-                           
+
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid  pt-5 " src="img/Ruijie-Logo-Singapore.png" alt="" >
+                            <img class="img-fluid  pt-5 " src="img/Ruijie-Logo-Singapore.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid mt-2 p-4 pt-5" src="img/wallix.avif" alt="" >
+                            <img class="img-fluid mt-2 p-4 pt-5" src="img/wallix.avif" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pt-2 " src="img/fortinet-logo.png" alt="" >
+                            <img class="img-fluid pt-2 " src="img/fortinet-logo.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid  pt-4 ps-4 pe-4 pb-2 " src="img/Watchguard_logo.svg.png" alt="" >
+                            <img class="img-fluid  pt-4 ps-4 pe-4 pb-2 " src="img/Watchguard_logo.svg.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pt-1 " src="img/922390-1200x549.png" alt="" >
+                            <img class="img-fluid pt-1 " src="img/922390-1200x549.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid ps-4 p-3" src="img/RBiv_Pq8gipuJpKcsR9anC1-TajDrQMFB9Pvw-U3qII.jpeg" alt="" >
+                            <img class="img-fluid ps-4 p-3" src="img/RBiv_Pq8gipuJpKcsR9anC1-TajDrQMFB9Pvw-U3qII.jpeg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-4  " src="img/Pasted-into-.png" alt="" >
+                            <img class="img-fluid p-4  " src="img/Pasted-into-.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid ps-2 pe-1 pt-4 " src="img/14b63d857e526037e772c97b122fdbaf.png" alt="" >
+                            <img class="img-fluid ps-2 pe-1 pt-4 " src="img/14b63d857e526037e772c97b122fdbaf.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-4 " src="img/Cisco_logo-1000px.png" alt="" >
+                            <img class="img-fluid p-4 " src="img/Cisco_logo-1000px.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pt-3" src="img/kaspersky-rebranding-in-details-1.jpg" alt="" >
+                            <img class="img-fluid pt-3" src="img/kaspersky-rebranding-in-details-1.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-4 pt-5" src="img/pi_logo.png" alt="" >
+                            <img class="img-fluid p-4 pt-5" src="img/pi_logo.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid " src="img/bitdefender1.jpg" alt="" >
+                            <img class="img-fluid " src="img/bitdefender1.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid " src="img/veritas6808.jpg" alt="" >
+                            <img class="img-fluid " src="img/veritas6808.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pt-2 " src="img/extreme_partner_network.jpg" alt="" >
+                            <img class="img-fluid pt-2 " src="img/extreme_partner_network.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pb-5 h-25" src="img/symphony1.jpg" alt="" >
+                            <img class="img-fluid pb-5 h-25" src="img/symphony1.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-3 pt-5"  src="img/logoaisfibre2.jpg" alt="" >
+                            <img class="img-fluid p-3 pt-5" src="img/logoaisfibre2.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-4"  src="img/ais-logo - Copy2.png" alt="" >
+                            <img class="img-fluid p-4" src="img/ais-logo - Copy2.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-4 pt-5" src="img/140344_3.webp" alt="" >
+                            <img class="img-fluid p-4 pt-5" src="img/140344_3.webp" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pt-5" src="img/SolarWinds-Logo.wine.svg" alt="" >
+                            <img class="img-fluid pt-5" src="img/SolarWinds-Logo.wine.svg" alt="">
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -717,7 +731,7 @@ include "includes/db.php";
     <!-- Testimonial End -->
 
     <?php include("./includes/footer.php") ?>
-   
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
