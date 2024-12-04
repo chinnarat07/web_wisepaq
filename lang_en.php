@@ -98,12 +98,12 @@ define('page_contact_1','Contact');
 define('page_contact_2','Home');
 define('page_contact_3','Contact Us');
 define('page_contact_2.1','If you have any questions or we can support your business. Please contact us.');
-define('page_contact_3.1','Name');
-define('page_contact_4','Email');
-define('page_contact_5','Subject');
-define('page_contact_6','Message');
-define('page_contact_7','Leave a message here');
-define('page_contact_8','Send Message');
+define('page_contact_4','Your Name');
+define('page_contact_5',' Your Email');
+define('page_contact_6','Subject');
+define('page_contact_7','Message');
+define('page_contact_8','Leave a message here');
+define('page_contact_9','Send Message');
 
 
 

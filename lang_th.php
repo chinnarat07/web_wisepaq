@@ -81,12 +81,12 @@ define('page_contact_1','ติดต่อ');
 define('page_contact_2','หน้าหลัก');
 define('page_contact_3','ติดต่อเรา');
 define('page_contact_2.1','หากคุณมีคำถามหรือเราสามารถสนับสนุนธุรกิจของคุณได้ โปรดติดต่อเรา');
-define('page_contact_3.1','ชื่อ');
-define('page_contact_4','อีเมล์');
-define('page_contact_5','หัวข้อ');
-define('page_contact_6','ข้อความ');
-define('page_contact_7','ฝากข้อความไว้ที่นี่');
-define('page_contact_8','ส่งข้อความ');
+define('page_contact_4','ชื่อ');
+define('page_contact_5','อีเมล์');
+define('page_contact_6','หัวข้อ');
+define('page_contact_7','ข้อความ');
+define('page_contact_8','ฝากข้อความไว้ที่นี่');
+define('page_contact_9','ส่งข้อความ');
 
 
 //vision.php
