@@ -49,44 +49,12 @@ include "includes/db.php";
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-12 col-lg-8 text-center">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">WELCOME TO WISEPAQ</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Your Trusted Technology Partner</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Welcome to Wisepaq, your trusted partner for all your technology needs. We specialize in providing top-notch technology, IT support, engineering, and outsource services to enhance your organization's success and productivity. With our tailored solutions, we ensure that your technology supports your business goals and growth.</p>
+                            <div class="col-12 col-lg-8 text-center ">
+                                <h3 class="text-white text-uppercase mb-3 animated slideInDown"><?php echo constant("page_content_1"); ?></h3>
+                                <h1 class="display-6 text-white animated slideInDown mb-4"><?php echo constant("page_content_2"); ?></h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2" style="text-indent: 2.5em;"><?php echo constant("page_content_3"); ?></p>
                                 <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/carousel-2.jpg" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-lg-8 text-center">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To WooDY</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Best Carpenter & Craftsman Services</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/carousel-3.jpg" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-lg-8 text-center">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To WooDY</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Best Carpenter & Craftsman Services</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a>
                             </div>
                         </div>
                     </div>
@@ -147,25 +115,25 @@ include "includes/db.php";
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg" style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/our_service.jpg" style="object-fit: cover;" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
-                        <div class="section-title text-start">
-                            <h1 class="display-5 mb-4">About Us</h1>
+                        <div class=" text-start">
+                            <h1 class="display-5 mb-4"><?php echo constant("page_content_4") ?></h1>
                         </div>
-                        <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                        <div class="row g-4 mb-4 pb-2">
+                        <p class="mb-4 pb-2" style="text-indent: 3em;"><?php echo constant("page_content_5") ?></p>
+                        <!-- <div class="row g-4 mb-4 pb-2">
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                                 <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                        <i class="fa fa-users fa-2x text-primary"></i>
-                                    </div>
-                                    <div class="ms-3">
+                                  <div class="ms-3">
                                         <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>
                                         <p class="fw-medium mb-0">Happy Clients</p>
+                                    </div>      <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-users fa-2x text-primary"></i>
                                     </div>
+                                
                                 </div>
                             </div>
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
@@ -179,8 +147,8 @@ include "includes/db.php";
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <a href="" class="btn btn-primary py-3 px-5">Explore More</a>
+                        </div> -->
+                        <!-- <a href="" class="btn btn-primary py-3 px-5">Explore More</a> -->
                     </div>
                 </div>
             </div>
@@ -192,28 +160,38 @@ include "includes/db.php";
     <div class="container-xxl py-5">
         <div class="container">
             <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Our Services</h1>
+                <h1 class="display-5 mb-5"><?php echo constant("page_content_4") ?></h1>
             </div>
             <div class="row g-4">
                 <?php
                 $query = "SELECT * FROM service";
                 $fetch_data = mysqli_query($connection, $query);
-
                 if (mysqli_num_rows($fetch_data) == 0) {
                     //echo "<h1 class='text-center'>No content Found</h1>";
                 } else {
                     while ($Row = mysqli_fetch_assoc($fetch_data)) {
+                           $ser_img =  $Row['ser_img']; 
+                if ($_SESSION['lang'] == 'en') {
+                        $ser_title = $Row['ser_title'];
+                        $ser_topic = $Row['ser_topic']; 
+                        $ser_description = $Row['ser_description'];
+                    } else {
+                        $ser_title = $Row['ser_title_th'];
+                        $ser_topic = $Row['ser_topic_th']; 
+                        $ser_description = $Row['ser_description_th'];
+                    }
                 ?>
+                
                         <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="service-item">
                                 <div class="overflow-hidden">
-                                    <img class="img-fluid" src="img/<?php echo $Row['service_img']; ?>" alt="">
+                                    <img class="img-fluid" src="img/<?php echo $ser_img; ?>" alt="">
                                 </div>
                                 <div class="p-4 text-center border border-5 border-light border-top-0">
-                                    <h4 class="mb-3 "><?php echo $Row['service_title']; ?></h4>
-                                    <p class="mb-0 "><b><?php echo $Row['service_topic']; ?></b></p>
-                                    <p class="text-start" style="text-indent: 2.5em;"><?php echo $Row['service_description']; ?></p>
-                                    <a class="fw-medium " href="">Read More<i class="fa fa-arrow-right ms-2 "></i></a>
+                                    <h4 class="mb-3 "><?php echo $ser_title; ?></h4>
+                                    <p class="mb-0 "><b><?php echo $ser_topic; ?></b></p>
+                                    <p class="text-start" style="text-indent: 2.5em;"><?php echo $ser_description ; ?></p>
+                                    <a class="fw-medium " href=""><?php echo constant("read_more"); ?><i class="fa fa-arrow-right ms-2 "></i></a>
                                 </div>
                            
                             </div>
@@ -221,7 +199,7 @@ include "includes/db.php";
                          <?php } ?>
                     <?php } ?>
 
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <!-- <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="service-item">
                             <div class="overflow-hidden">
                                 <img class="img-fluid" src="img/service-2.jpg" alt="">
@@ -280,7 +258,7 @@ include "includes/db.php";
                                 <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
             </div>
         </div>
     </div>

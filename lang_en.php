@@ -5,9 +5,19 @@ define('web_option_select','English');  //Select a option
 define('web_theme_title','Stellar Theme');
 define('web_theme_message','<p>Just another free, fully responsive site template<br /> edited by <a href="https://github.com/irenteria0617"><strong>@Ismael</strong></a> developed by <a target="_blank" href="https://html5up.net">HTML5 UP</a>.</p>');
 define('address','116/69 SSP Tower 2, 19th Floor, Na Ranong Road, <br> Klongtoey, Klongtoey Bangkok, Thailand 10110');
-
-//work time
 define('work_time','Mon - Fri : 08.30 AM - 17.00 PM');
+
+//header
+define('page_content_1','WELCOME TO WISEPAQ');
+define('page_content_2','Your Trusted Technology Partner');
+define('page_content_3'," for all your technology needs. We specialize in providing top-notch technology, IT support, engineering, and outsource services to enhance your organization's success and productivity. With our tailored solutions, we ensure that your technology supports your business goals and growth.");
+define('page_content_4','Our Services');
+define('page_content_5','Explore a comprehensive range of technology services at Wisepaq, where we go above and beyond to meet and exceed your technology requirements. Our team works closely with you to develop customized plans that seamlessly integrate with your operations, ensuring long-term effectiveness and sustainability. Get in touch with us today to discover how we can elevate your technology infrastructure.');
+
+// read more
+define('read_more','Read More');
+
+
 //footer
 define('page_footer_1','Get In Touch');
 define('page_footer_2','127/25 Panjathani Tower 20th Floor, Nonsri Road, Chongnonsri, Yannawa, Bangkok 10120.');
@@ -85,8 +95,10 @@ define('page_service_10','Complete warehouse management service with WMS system,
 
 //contact.php
 define('page_contact_1','Contact');
-define('page_contact_2','If you have any questions or we can support your business. Please contact us.');
-define('page_contact_3','Name');
+define('page_contact_2','Home');
+define('page_contact_3','Contact Us');
+define('page_contact_2.1','If you have any questions or we can support your business. Please contact us.');
+define('page_contact_3.1','Name');
 define('page_contact_4','Email');
 define('page_contact_5','Subject');
 define('page_contact_6','Message');

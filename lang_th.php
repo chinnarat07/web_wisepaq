@@ -6,9 +6,18 @@ define('web_theme_title','Tema Estellar');
 define('web_theme_message','<p>Este solo es otra gratuita y responsiva plantilla<br /> editada por <a target="_blank" href="https://github.com/irenteria0617"><strong>@Ismael</strong></a> desarrollada por <a target="_blank" href="https://html5up.net">HTML5 UP</a>.</p>');
 
 define('address','116/69 เอส เอส พี ทาวเวอร์ 2 ชั้น 19 <br>ถนน ณ ระนอง แขวงคลองเตย  เขตคลองเตย กรุงเทพมหานคร 10110');
-
-//work time
 define('work_time','จ. - ศ. : 8:30 - 17:00 น.');
+
+//header
+define('page_content_1','ยินดีต้อนรับสู่ WISEPAQ');
+define('page_content_2','พันธมิตรด้านเทคโนโลยีที่คุณวางใจได้');
+define('page_content_3',"สำหรับทุกความต้องการด้านเทคโนโลยีของคุณ เราเชี่ยวชาญในการให้บริการเทคโนโลยีชั้นยอด การสนับสนุนด้านไอที วิศวกรรม และบริการภายนอก เพื่อเพิ่มความสำเร็จและประสิทธิผลขององค์กรของคุณ ด้วยโซลูชันที่ออกแบบโดยเฉพาะของเรา เรารับรองว่าเทคโนโลยีของคุณสนับสนุนเป้าหมายทางธุรกิจและการเติบโตของคุณ");
+define('page_content_4','การบริการของเรา');
+define('page_content_5','สำรวจบริการเทคโนโลยีที่ครอบคลุมที่ Wisepaq ซึ่งเราจะก้าวไปไกลกว่านั้นเพื่อตอบสนองและเกินความต้องการด้านเทคโนโลยีของคุณ ทีมงานของเราทำงานอย่างใกล้ชิดกับคุณเพื่อพัฒนาแผนงานที่กำหนดเองซึ่งบูรณาการเข้ากับการดำเนินงานของคุณได้อย่างราบรื่น เพื่อให้มั่นใจถึงประสิทธิภาพและความยั่งยืนในระยะยาว ติดต่อเราวันนี้เพื่อดูว่าเราสามารถยกระดับโครงสร้างพื้นฐานด้านเทคโนโลยีของคุณได้อย่างไร');
+
+// read more
+define('read_more','อ่านเพิ่มเติม');
+
 //footer
 define('page_footer_1','การติดต่อ');
 define('page_footer_2','127/25 อาคาร ปัญจธานีทาวเวอร์ ชั้น 20 ถนนนนทรี แขวงช่องนนทรี เขตยาวนาวา กรุงเทพ 10120');
@@ -68,9 +77,11 @@ define('page_service_10','บริการบริหารคลังสิ
 
 
 //contact.php
-define('page_contact_1','ติดต่อเรา');
-define('page_contact_2','หากคุณมีคำถามหรือเราสามารถสนับสนุนธุรกิจของคุณได้ โปรดติดต่อเรา');
-define('page_contact_3','ชื่อ');
+define('page_contact_1','ติดต่อ');
+define('page_contact_2','หน้าหลัก');
+define('page_contact_3','ติดต่อเรา');
+define('page_contact_2.1','หากคุณมีคำถามหรือเราสามารถสนับสนุนธุรกิจของคุณได้ โปรดติดต่อเรา');
+define('page_contact_3.1','ชื่อ');
 define('page_contact_4','อีเมล์');
 define('page_contact_5','หัวข้อ');
 define('page_contact_6','ข้อความ');

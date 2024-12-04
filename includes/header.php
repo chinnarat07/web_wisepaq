@@ -2,15 +2,15 @@
 session_start();
 if (isset($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
-} elseif (!$_SESSION['lang']) {
-    $_SESSION['lang'] = 'en';
+} elseif (!isset($_SESSION['lang'])) {
+    $_SESSION['lang'] = 'th';
 }
 include('lang_' . $_SESSION['lang'] . '.php');
 ?>
 <!-- Spinner Start -->
 <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-        <span class="sr-only">Loading...</span>
+    <div class="spinner-grow "  role="status">
+        <img src="img/wisepaq.jpg"  alt="Loading" width="80" height="80"/>
     </div>
 </div>
 <!-- Spinner End -->
@@ -75,12 +75,12 @@ include('lang_' . $_SESSION['lang'] . '.php');
 
                     if (mysqli_num_rows($fetch_data_sub) == 0) {
                         //echo "<h1 class='text-center'>No content Found</h1>";
-            ?>
-                        <a href="<?php echo $link; ?>" class="nav-item nav-link "><?php echo $menu_title;  ?></a>
+                        ?>
+                        <a href="<?php echo $link; ?>" class="nav-item nav-link "><?php echo $menu_title; ?></a>
 
-                    <?php
+                        <?php
                     } else {
-                    ?>
+                        ?>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><?php echo $menu_title; ?></a>
                             <div class="dropdown-menu fade-up m-0">
@@ -92,23 +92,25 @@ include('lang_' . $_SESSION['lang'] . '.php');
                                         $menu_title_sub = $Row_sub['menu_subname_thai'];
                                     }
                                     $link_sub = $Row_sub['link_subname'];
-                                ?>
-                                    <a href="<?php echo $link_sub;  ?>" class="dropdown-item "><?php echo $menu_title_sub  ?></a>
-                                <?php  } ?>
+                                    ?>
+                                    <a href="<?php echo $link_sub; ?>" class="dropdown-item "><?php echo $menu_title_sub ?></a>
+                                <?php } ?>
                             </div>
                         </div>
-                    <?php  } ?>
-            <?php  }
-            } ?>
+                    <?php } ?>
+                <?php }
+            }
+            ?>
         </div>
-        <div class="btn-group btn-group-toggle me-4" data-toggle="buttons">
+        <div class="btn-group btn-group-toggle me-4  " data-toggle="buttons">
             <label class="btn btn-primary ">
-                <input type="radio" style="appearance: none;" onchange="change_lang(this.value)" autocomplete="off" value="th"> TH
+                <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="th"> TH
             </label>
-            <label class="btn btn-primary active">
-                <input type="radio" style="appearance: none;" onchange="change_lang(this.value)" autocomplete="off" value="en"> EN
+            <label class="btn btn-primary active ">
+                <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="en"> EN
             </label>
         </div>
+
 </nav>
 <!-- Scripts -->
 <script>
