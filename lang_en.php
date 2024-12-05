@@ -15,7 +15,8 @@ define('page_content_4','Our Services');
 define('page_content_5','Explore a comprehensive range of technology services at Wisepaq, where we go above and beyond to meet and exceed your technology requirements. Our team works closely with you to develop customized plans that seamlessly integrate with your operations, ensuring long-term effectiveness and sustainability. Get in touch with us today to discover how we can elevate your technology infrastructure.');
 
 // read more
-define('read_more','Read More');
+define('page_content_6','Read More');
+define('page_content_7','Our Partners');
 
 
 //footer

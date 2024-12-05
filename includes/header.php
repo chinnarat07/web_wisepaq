@@ -102,7 +102,7 @@ include('lang_' . $_SESSION['lang'] . '.php');
             }
             ?>
         </div>
-        <div class="btn-group btn-group-toggle me-4   w-lg-100" data-toggle="buttons">
+        <div class="btn-group btn-group-toggle me-4 " data-toggle="buttons">
             <label class="btn btn-primary ">
                 <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="th"> TH
             </label>
