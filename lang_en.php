@@ -31,7 +31,8 @@ define('page_footer_3','Quick Links');
 define('page_footer_31','About Us');
 define('page_footer_32','Our Services');
 define('page_footer_33','Contact Us');
-define('page_footer_4','Social');
+define('page_footer_4','Follow us');
+define('page_footer_5','Location');
 define('page_footer_0','&copy; 2022 Wisepaq, All Right Reserved.');
 
 //index.php

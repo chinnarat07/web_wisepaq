@@ -31,7 +31,8 @@ define('page_footer_3','ลิงก์ด่วน');
 define('page_footer_31','เกี่ยวกับเรา');
 define('page_footer_32','บริการของเรา');
 define('page_footer_33','ติดต่อเรา');
-define('page_footer_4','Social');
+define('page_footer_4','ติดตามเรา');
+define('page_footer_5','ที่อยู่');
 define('page_footer_0','สงวนลิขสิทธิ์  &copy; 2022 Wisepaq');
 
 //index.php
