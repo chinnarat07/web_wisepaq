@@ -191,7 +191,7 @@ include "includes/db.php";
                                     <h4 class="mb-3 "><?php echo $ser_title; ?></h4>
                                     <p class="mb-0 "><b><?php echo $ser_topic; ?></b></p>
                                     <p class="text-start" style="text-indent: 2.5em;"><?php echo $ser_description ; ?></p>
-                                    <a class="fw-medium " href=""><?php echo constant("read_more"); ?><i class="fa fa-arrow-right ms-2 "></i></a>
+                                    <a class="fw-medium " href=""><?php echo constant("page_content_6"); ?><i class="fa fa-arrow-right ms-2 "></i></a>
                                 </div>
                            
                             </div>
@@ -500,7 +500,7 @@ include "includes/db.php";
     <div class="container-xxl py-5">
         <div class="container">
             <div class="section-title text-center">
-                <h1 class="display-5 mb-5">OUR PARTNERS</h1>
+                <h1 class="display-5 mb-5"><?php echo constant("page_content_7"); ?></h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">

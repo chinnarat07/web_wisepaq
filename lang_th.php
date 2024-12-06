@@ -16,7 +16,8 @@ define('page_content_4','การบริการของเรา');
 define('page_content_5','สำรวจบริการเทคโนโลยีที่ครอบคลุมที่ Wisepaq ซึ่งเราจะก้าวไปไกลกว่านั้นเพื่อตอบสนองและเกินความต้องการด้านเทคโนโลยีของคุณ ทีมงานของเราทำงานอย่างใกล้ชิดกับคุณเพื่อพัฒนาแผนงานที่กำหนดเองซึ่งบูรณาการเข้ากับการดำเนินงานของคุณได้อย่างราบรื่น เพื่อให้มั่นใจถึงประสิทธิภาพและความยั่งยืนในระยะยาว ติดต่อเราวันนี้เพื่อดูว่าเราสามารถยกระดับโครงสร้างพื้นฐานด้านเทคโนโลยีของคุณได้อย่างไร');
 
 // read more
-define('read_more','อ่านเพิ่มเติม');
+define('page_content_6','อ่านเพิ่มเติม');
+define('page_content_7','พันธมิตรของเรา');
 
 //footer
 define('page_footer_1','การติดต่อ');
@@ -81,12 +82,12 @@ define('page_contact_1','ติดต่อ');
 define('page_contact_2','หน้าหลัก');
 define('page_contact_3','ติดต่อเรา');
 define('page_contact_2.1','หากคุณมีคำถามหรือเราสามารถสนับสนุนธุรกิจของคุณได้ โปรดติดต่อเรา');
-define('page_contact_3.1','ชื่อ');
-define('page_contact_4','อีเมล์');
-define('page_contact_5','หัวข้อ');
-define('page_contact_6','ข้อความ');
-define('page_contact_7','ฝากข้อความไว้ที่นี่');
-define('page_contact_8','ส่งข้อความ');
+define('page_contact_4','ชื่อ');
+define('page_contact_5','อีเมล์');
+define('page_contact_6','หัวข้อ');
+define('page_contact_7','ข้อความ');
+define('page_contact_8','ฝากข้อความไว้ที่นี่');
+define('page_contact_9','ส่งข้อความ');
 
 
 //vision.php
