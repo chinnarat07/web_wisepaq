@@ -5,8 +5,7 @@
              <div class="row g-5">
                  <div class="col-lg-3 col-md-6">
                      <h4 class="text-light mb-4">Address</h4>
-                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>116/69 SSP Tower 2, 19th Floor, Na Ranong
-                         Road, Klongtoey, Klongtoey <br> Bangkok, Thailand 10110</p>
+                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i><?php echo constant('page_footer_12') ?></p>
                      <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+66 21 195 300</p>
                      <p class="mb-2"><i class="fa fa-fax me-3"></i>021195310</p>
                      <p class="mb-2"><i class="fa fa-envelope me-3"></i>hello@wisepaq.com</p>

@@ -21,16 +21,16 @@ define('page_content_7','Our Partners');
 
 //footer
 define('page_footer_1','Get In Touch');
-define('page_footer_2','127/25 Panjathani Tower 20th Floor, Nonsri Road, Chongnonsri, Yannawa, Bangkok 10120.');
-define('page_footer_3','02-398-0162-3');
-define('page_footer_4','info@dpower3.com');
-
-define('page_footer_5','Quick Links');
-define('page_footer_6','Home');
-define('page_footer_7','About Us');
-define('page_footer_8','Vision Mission');
-define('page_footer_9','Our Services');
-define('page_footer_10','Contact Us');
+define('page_footer_12','116/69 SSP Tower 2, 19th Floor, Na Ranong Road, Klongtoey, Klongtoey Bangkok, Thailand 10110');
+define('page_footer_13','+66 21 195 300');
+define('page_footer_14','021195310');
+define('page_footer_15','hello@wisepaq.com');
+define('page_footer_16','@wisepaq');
+define('page_footer_2','Home');
+define('page_footer_3','About Us');
+define('page_footer_4','Vision Mission');
+define('page_footer_5','Our Services');
+define('page_footer_6','Contact Us');
 
 //index.php
 define('page_index_button_1','Home');
