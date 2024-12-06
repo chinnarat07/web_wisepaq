@@ -21,16 +21,18 @@ define('page_content_7','Our Partners');
 
 //footer
 define('page_footer_1','Get In Touch');
-define('page_footer_12','116/69 SSP Tower 2, 19th Floor, Na Ranong Road, Klongtoey, Klongtoey Bangkok, Thailand 10110');
+define('page_footer_12','116/69 SSP Tower 2, 19th Floor,</br> Na Ranong Road, Klongtoey, Klongtoey Bangkok, Thailand 10110');
 define('page_footer_13','+66 21 195 300');
 define('page_footer_14','021195310');
 define('page_footer_15','hello@wisepaq.com');
 define('page_footer_16','@wisepaq');
-define('page_footer_2','Home');
-define('page_footer_3','About Us');
-define('page_footer_4','Vision Mission');
-define('page_footer_5','Our Services');
-define('page_footer_6','Contact Us');
+define('page_footer_2','Services');
+define('page_footer_3','Quick Links');
+define('page_footer_31','About Us');
+define('page_footer_32','Our Services');
+define('page_footer_33','Contact Us');
+define('page_footer_4','Social');
+define('page_footer_0','&copy; 2022 Wisepaq, All Right Reserved.');
 
 //index.php
 define('page_index_button_1','Home');

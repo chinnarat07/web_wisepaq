@@ -21,16 +21,18 @@ define('page_content_7','พันธมิตรของเรา');
 
 //footer
 define('page_footer_1','การติดต่อ');
-define('page_footer_12','116/69 เอส เอส พี ทาวเวอร์ 2 ชั้น 19 <br>ถนน ณ ระนอง แขวงคลองเตย  เขตคลองเตย กรุงเทพมหานคร 10110');
+define('page_footer_12','116/69 เอส เอส พี ทาวเวอร์ 2 ชั้น 19 ถนน ณ ระนอง แขวงคลองเตย  เขตคลองเตย กรุงเทพมหานคร 10110');
 define('page_footer_13','+66 21 195 300');
 define('page_footer_14','021195310');
 define('page_footer_15','hello@wisepaq.com');
 define('page_footer_16','@wisepaq');
-define('page_footer_6','หน้าหลัก');
-define('page_footer_7','เกี่ยวกับเรา');
-define('page_footer_8','วิสัยทัศน์ และพันธกิจ');
-define('page_footer_9','บริการของเรา');
-define('page_footer_10','ติดต่อเรา');
+define('page_footer_2','การบริการ');
+define('page_footer_3','ลิงก์ด่วน');
+define('page_footer_31','เกี่ยวกับเรา');
+define('page_footer_32','บริการของเรา');
+define('page_footer_33','ติดต่อเรา');
+define('page_footer_4','Social');
+define('page_footer_0','สงวนลิขสิทธิ์  &copy; 2022 Wisepaq');
 
 //index.php
 define('page_index_button_1','หน้าหลัก');

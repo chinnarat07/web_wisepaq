@@ -164,7 +164,7 @@ include "includes/db.php";
             </div>
             <div class="row g-4">
                 <?php
-                $query = "SELECT * FROM service";
+                $query = "SELECT * FROM services";
                 $fetch_data = mysqli_query($connection, $query);
                 if (mysqli_num_rows($fetch_data) == 0) {
                     //echo "<h1 class='text-center'>No content Found</h1>";
@@ -670,7 +670,6 @@ include "includes/db.php";
         </div>
     </div>
     <!-- Team End -->
-
 
     <!-- Testimonial Start -->
     <!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">

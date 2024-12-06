@@ -1,54 +1,67 @@
  <!-- Footer Start -->
  <div id="footer">
-     <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+     <div class="container-fluid bg-dark text-light footer mt-5 pt-0 wow fadeIn" data-wow-delay="0.1s">
          <div class="container py-5">
-             <div class="row g-5">
-                 <div class="col-lg-3 col-md-6">
-                     <h4 class="text-light mb-4">Address</h4>
-                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i><?php echo constant('page_footer_12') ?></p>
-                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+66 21 195 300</p>
-                     <p class="mb-2"><i class="fa fa-fax me-3"></i>021195310</p>
-                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>hello@wisepaq.com</p>
-                     <p class="mb-2"><i class="fab fa-line me-3"></i>@wisepaq</p>
+             <div class="row g-5 " style="margin-left: 10%;">
+                 <div class="col-lg-3 col-md-6 " style="width:35%;" >
+                     <h1 class="text-light mb-4 "><?php echo constant('page_footer_1') ?></h1>
+                     <p class="mb-2 fs-5"><i class="fa fa-map-marker-alt me-3"></i><?php echo constant('page_footer_12') ?></p>
+                     <p class="mb-2 fs-5"><i class="fa fa-phone-alt me-3"></i><?php echo constant('page_footer_13') ?></p>
+                     <p class="mb-2 fs-5"><i class="fa fa-fax me-3"></i><?php echo constant('page_footer_14') ?></p>
+                     <p class="mb-2 fs-5"><i class="fa fa-envelope me-3"></i><?php echo constant('page_footer_15') ?></p>
+                     <p class="mb-2 fs-5"><i class="fab fa-line me-3"></i><?php echo constant('page_footer_16') ?></p>
+                 </div>
+                 <div class="col-lg-3 col-md-6 " style="width:30%;" >
+                     <h1 class="text-light mb-4"><?php echo constant('page_footer_2') ?></h1>
+                     <?php $query = "SELECT * FROM services_small";
+                            $ser_small = mysqli_query($connection, $query);
+                            if (mysqli_num_rows($fetch_data) == 0) {
+                                //echo "<h1 class='text-center'>No content Found</h1>";
+                            } else {
+                                while ($Row_ser = mysqli_fetch_assoc($ser_small)) {
+                                    if ($_SESSION['lang'] == 'en') {
+                                        $ser_small_name = $Row_ser['service_name'];
+                                    } else {
+                                        $ser_small_name = $Row_ser['service_name_th'];
+                                    }
+                                    $link_ser_name = $Row_ser['link_ser_name'];
+                     ?>
+                     <a class="btn btn-link fs-5" href="<?php echo  $link_ser_name ?>"><?php echo  $ser_small_name ?></a>
+
+                     <?php } } ?>
+                 </div>
+                 <div class="col-lg-3 col-md-6 ms-5 " >
+                     <h1 class="text-light mb-4"><?php echo constant('page_footer_3') ?></h1>
+                     <a class="btn btn-link fs-5" href=""><?php echo constant('page_footer_31') ?></a>
+                     <a class="btn btn-link fs-5" href=""><?php echo constant('page_footer_32') ?></a>
+                     <a class="btn btn-link fs-5" href=""><?php echo constant('page_footer_33') ?></a>
+
+                     <h1 class="text-light mb-3 mt-4"><?php echo constant('page_footer_4') ?></h1>
                      <div class="d-flex pt-2">
-                         <a class="btn btn-outline-light btn-social" href="https://twitter.com/Wisepaq" target="_parent"><i
-                                 class="fab fa-twitter"></i></a>
-                         <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/Wisepaqbusiness/" target="_blank"><i
+                         <a class="btn btn-outline-light btn-social fs-5" href="https://twitter.com/Wisepaq" target="_parent"><i
+                                 class="fab fa-twitter "></i></a>
+                         <a class="btn btn-outline-light btn-social fs-5" href="https://www.facebook.com/Wisepaqbusiness/" target="_blank"><i
                                  class="fab fa-facebook-f"></i></a>
-                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                         <a class="btn btn-outline-light btn-social fs-5" href=""><i class="fab fa-youtube"></i></a>
                          <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a> -->
                      </div>
                  </div>
-                 <div class="col-lg-3 col-md-6">
-                     <h4 class="text-light mb-4">Services</h4>
-                     <a class="btn btn-link" href="">General Carpentry</a>
-                     <a class="btn btn-link" href="">Furniture Remodeling</a>
-                     <a class="btn btn-link" href="">Wooden Floor</a>
-                     <a class="btn btn-link" href="">Wooden Furniture</a>
-                     <a class="btn btn-link" href="">Custom Carpentry</a>
-                 </div>
-                 <div class="col-lg-3 col-md-6">
-                     <h4 class="text-light mb-4">Quick Links</h4>
-                     <a class="btn btn-link" href="">About Us</a>
-                     <a class="btn btn-link" href="">Contact Us</a>
-                     <a class="btn btn-link" href="">Our Services</a>
-                     <a class="btn btn-link" href="">Terms & Condition</a>
-                     <a class="btn btn-link" href="">Support</a>
-                 </div>
-                 <div class="col-lg-3 col-md-6">
-                     <h4 class="text-light mb-4">Newsletter</h4>
-                     <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                         <button type="button"
-                             class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                 <!-- <div class="col-lg-3 col-md-6 ">
+                     <h4 class="text-light mb-2"><?php echo constant('page_footer_4') ?></h4>
+                     <div class="d-flex pt-2">
+                         <a class="btn btn-outline-light btn-social " href="https://twitter.com/Wisepaq" target="_parent"><i
+                                 class="fab fa-twitter "></i></a>
+                         <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/Wisepaqbusiness/" target="_blank"><i
+                                 class="fab fa-facebook-f"></i></a>
+                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                      </div>
-                 </div>
+                 </div> -->
              </div>
          </div>
          <div class="container">
              <div class="copyright text-center">
-                 &copy; <a class="border-bottom" href="#">2022 Wisepaq</a>, All Right Reserved.
+                <span class="border-bottom" ><?php echo constant('page_footer_0') ?></span>
              </div>
          </div>
      </div>
