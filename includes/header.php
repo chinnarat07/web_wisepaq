@@ -44,14 +44,14 @@ include('lang_' . $_SESSION['lang'] . '.php');
 <!-- Topbar End -->
 
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 ">
     <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h2 class="m-0 "><img src="img/wisepaq.jpg" alt="" width="60" height="60" style="margin-right: 5px;">WISEPAQ</h2>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="collapse navbar-collapse " id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <?php
             $query = "SELECT * FROM  menu";
@@ -102,7 +102,7 @@ include('lang_' . $_SESSION['lang'] . '.php');
             }
             ?>
         </div>
-        <div class="btn-group btn-group-toggle me-4  " data-toggle="buttons">
+        <div class="btn-group btn-group-toggle me-4 " data-toggle="buttons">
             <label class="btn btn-primary ">
                 <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="th"> TH
             </label>
