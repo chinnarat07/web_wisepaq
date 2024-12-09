@@ -158,9 +158,10 @@ include "includes/db.php";
 
     <!-- Service Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="section-title text-center">
-                <h1 class="display-5 mb-5"><?php echo constant("page_content_4") ?></h1>
+        <div class="container py-5 section-title">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-secondary text-uppercase"><?php echo constant("page_content_4") ?></h6>
+                <h1 class="mb-5"><?php echo constant("page_content_41") ?></h1>
             </div>
             <div class="row g-4">
                 <?php
@@ -170,102 +171,42 @@ include "includes/db.php";
                     //echo "<h1 class='text-center'>No content Found</h1>";
                 } else {
                     while ($Row = mysqli_fetch_assoc($fetch_data)) {
-                           $ser_img =  $Row['ser_img']; 
-                if ($_SESSION['lang'] == 'en') {
-                        $ser_title = $Row['ser_title'];
-                        $ser_topic = $Row['ser_topic']; 
-                        $ser_description = $Row['ser_description'];
-                    } else {
-                        $ser_title = $Row['ser_title_th'];
-                        $ser_topic = $Row['ser_topic_th']; 
-                        $ser_description = $Row['ser_description_th'];
-                    }
+                        $count = 0.3;
+                        $ser_img =  $Row['ser_img'];
+                        if ($_SESSION['lang'] == 'en') {
+                            $ser_title = $Row['ser_title'];
+                            $ser_topic = $Row['ser_topic'];
+                            $ser_description = $Row['ser_description'];
+                        } else {
+                            $ser_title = $Row['ser_title_th'];
+                            $ser_topic = $Row['ser_topic_th'];
+                            $ser_description = $Row['ser_description_th'];
+                        }
                 ?>
-                
-                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="service-item">
-                                <div class="overflow-hidden">
+                        <div class="col-md-6 col-lg-4 wow fadeInUp d-flex" data-wow-delay="<?php echo $count <= 0.5 ? $count . "s" : $count = 0.3 . "s" ?>">
+                            <div class="service-item p-4 flex-grow-1 d-flex flex-column position-relative">
+                                <div class="overflow-hidden mb-4">
                                     <img class="img-fluid" src="img/<?php echo $ser_img; ?>" alt="">
                                 </div>
-                                <div class="p-4 text-center border border-5 border-light border-top-0">
-                                    <h4 class="mb-3 "><?php echo $ser_title; ?></h4>
-                                    <p class="mb-0 "><b><?php echo $ser_topic; ?></b></p>
-                                    <p class="text-start" style="text-indent: 2.5em;"><?php echo $ser_description ; ?></p>
-                                    <a class="fw-medium " href=""><?php echo constant("page_content_6"); ?><i class="fa fa-arrow-right ms-2 "></i></a>
-                                </div>
-                           
+                                <h4 class="mb-3 text-center"><?php echo $ser_title; ?></h4>
+                                <p class="mb-0 text-center"><b><?php echo $ser_topic; ?></b></p>
+                                <p class="text-start pb-5" style="text-indent: 2.5em;"><?php echo $ser_description; ?></p>
+                                <a class="btn-slide mt-2 position-absolute" style="bottom: 10px; left: 10px;" href="#">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <span><?php echo constant("page_content_6"); ?></span>
+                                </a>
                             </div>
                         </div>
-                         <?php } ?>
+                        <?php $count = $count + 0.2; ?>
                     <?php } ?>
-
-                    <!-- <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/service-2.jpg" alt="">
-                            </div>
-                            <div class="p-4 text-center border border-5 border-light border-top-0">
-                                <h4 class="mb-3">Furniture Manufacturing</h4>
-                                <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                                <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/service-3.jpg" alt="">
-                            </div>
-                            <div class="p-4 text-center border border-5 border-light border-top-0">
-                                <h4 class="mb-3">Furniture Remodeling</h4>
-                                <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                                <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/service-4.jpg" alt="">
-                            </div>
-                            <div class="p-4 text-center border border-5 border-light border-top-0">
-                                <h4 class="mb-3">Wooden Floor</h4>
-                                <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                                <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/service-5.jpg" alt="">
-                            </div>
-                            <div class="p-4 text-center border border-5 border-light border-top-0">
-                                <h4 class="mb-3">Wooden Furniture</h4>
-                                <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                                <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/service-6.jpg" alt="">
-                            </div>
-                            <div class="p-4 text-center border border-5 border-light border-top-0">
-                                <h4 class="mb-3">Custom Work</h4>
-                                <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                                <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div> -->
+                <?php } ?>
             </div>
         </div>
     </div>
     <!-- Service End -->
-    
-<!-- Carousel Start -->
-<div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative" data-dot="<img src='img/carousel-1.jpg'>">
                 <img class="img-fluid" src="img/carousel-1.jpg" alt="">
@@ -544,21 +485,34 @@ include "includes/db.php";
     <!-- Quote End -->
 
 
-    <!-- Team Start -->
+    <!-- Our Partners Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="section-title text-center">
-                <h1 class="display-5 mb-5"><?php echo constant("page_content_7"); ?></h1>
+                <h6 class="text-secondary text-uppercase"><?php echo constant("page_content_7") ?></h6>
+                <h1 class="mb-5"><?php echo constant("page_content_71") ?></h1>
             </div>
             <div class="row g-4">
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pt-3" src="img/Sophos-Logo.jpg" alt="">
+                <?php
+                $query_partner = "SELECT * FROM images";
+                $fetch_data_partners = mysqli_query($connection, $query_partner);
+                if (mysqli_num_rows($fetch_data_partners) == 0) {
+                    //echo "<h1 class='text-center'>No content Found</h1>";
+                } else {
+                    while ($Row_partners = mysqli_fetch_assoc($fetch_data_partners)) {
+                        $imageURL = 'uploads/' . $Row_partners['file_name'];
+                ?>
+                        <div class="col-lg-2 col-md-6 wow fadeInUp" id="image-container" style="display: flex; gap: 10px;" data-wow-delay="0.3s">
+                            <div class="team-item">
+                                <div class="overflow-hidden position-relative">
+                                    <img class="img-fluid p-3" src="<?php echo $imageURL; ?>" alt="" >
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <?php }
+                } ?>
+             
+                <!-- <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="overflow-hidden position-relative">
                             <img class="img-fluid p-3 pt-4 " src="img/vmware_workstation_logo.jpg" alt="">
@@ -712,7 +666,7 @@ include "includes/db.php";
                             <img class="img-fluid pt-5" src="img/SolarWinds-Logo.wine.svg" alt="">
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>

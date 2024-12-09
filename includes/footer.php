@@ -52,7 +52,7 @@
                      
                              <div class="position-relative h-100">
                                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15504.243776250698!2d100.5580155!3d13.7147587!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a1e14e5f1c45%3A0x96187e02d34a4e78!2sWisepaq%20Business%20Solutions%20Provider%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1733478257715!5m2!1sth!2sth" 
-                                    width="370" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    width="370" height="250" style="border:0;"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                              </div>
 
                  </div>

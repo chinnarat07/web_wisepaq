@@ -12,11 +12,13 @@ define('page_content_1','WELCOME TO WISEPAQ');
 define('page_content_2','Your Trusted Technology Partner');
 define('page_content_3'," for all your technology needs. We specialize in providing top-notch technology, IT support, engineering, and outsource services to enhance your organization's success and productivity. With our tailored solutions, we ensure that your technology supports your business goals and growth.");
 define('page_content_4','Our Services');
+define('page_content_41','Explore Our Services');
 define('page_content_5','Explore a comprehensive range of technology services at Wisepaq, where we go above and beyond to meet and exceed your technology requirements. Our team works closely with you to develop customized plans that seamlessly integrate with your operations, ensuring long-term effectiveness and sustainability. Get in touch with us today to discover how we can elevate your technology infrastructure.');
 
 // read more
 define('page_content_6','Read More');
 define('page_content_7','Our Partners');
+define('page_content_71','Explore Our Partners');
 
 
 //footer
