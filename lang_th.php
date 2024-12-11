@@ -83,9 +83,10 @@ define('page_service_10','บริการบริหารคลังสิ
 
 
 //contact.php
-define('page_contact_1','ติดต่อ');
+define('page_contact_1','ติดต่อเรา');
 define('page_contact_2','หน้าหลัก');
 define('page_contact_3','ติดต่อเรา');
+define('page_contact_31','ติดต่อเรา');
 define('page_contact_4','หากคุณมีคำถามหรือเราสามารถสนับสนุนธุรกิจของคุณได้ โปรดติดต่อเรา');
 define('page_contact_5','ที่อยู่');
 define('page_contact_6','116/69 เอส เอส พี ทาวเวอร์ 2 ชั้น 19 ถนน ณ ระนอง แขวงคลองเตย  เขตคลองเตย กรุงเทพมหานคร 10110');

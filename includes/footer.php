@@ -1,6 +1,6 @@
  <!-- Footer Start -->
  <div id="footer" >
-     <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn "  data-wow-delay="0.1s">
+     <div class="container-fluid bg-dark text-light footer mt-5  wow fadeIn "  data-wow-delay="0.1s">
          <div class="container py-5">
              <div class="row g-5 ">
                  <div class="col-lg-3 col-md-6 ">
@@ -32,7 +32,7 @@
                         } ?>
                  </div>
                  <div class="col-lg-3 col-md-6 ">
-                     <h1 class="text-light "><?php echo constant('page_footer_3') ?></h1>
+                     <h1 class="text-light mb-4"><?php echo constant('page_footer_3') ?></h1>
                      <a class="btn btn-link " href=""><?php echo constant('page_footer_31') ?></a>
                      <a class="btn btn-link " href=""><?php echo constant('page_footer_32') ?></a>
                      <a class="btn btn-link " href=""><?php echo constant('page_footer_33') ?></a>
@@ -48,7 +48,7 @@
                      </div>
                  </div>
                  <div class="col-lg-3 col-md-6 ">
-                     <h1 class="text-light mb-2"><?php echo constant('page_footer_5') ?></h1>
+                     <h1 class="text-light mb-4"><?php echo constant('page_footer_5') ?></h1>
                      
                              <div class="position-relative h-100">
                                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15504.243776250698!2d100.5580155!3d13.7147587!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a1e14e5f1c45%3A0x96187e02d34a4e78!2sWisepaq%20Business%20Solutions%20Provider%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1733478257715!5m2!1sth!2sth" 

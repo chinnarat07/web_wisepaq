@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Woody - Carpenter Website Template</title>
+    <title>WISEPAQ | วางระบบ network | Thailand</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/wisepaq.jpg" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,7 @@ include "includes/db.php";
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a class="text-white" href="index.php"><?php echo constant('page_contact_2') ?></a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page"><?php echo constant('page_contact_3') ?></li>
+                    <li class="breadcrumb-item text-dark active" aria-current="page"><?php echo constant('page_contact_3') ?></li>
                 </ol>
             </nav>
         </div>
@@ -65,31 +65,31 @@ include "includes/db.php";
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="d-flex flex-column justify-content-between h-100">
-                        <div class="bg-light d-flex align-items-center w-100 p-4 mb-4">
-                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 55px; height: 55px;">
-                                <i class="fa fa-map-marker-alt text-primary"></i>
+                        <div class="bg-light d-flex align-items-center w-100 p-4 ">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 50px; height: 50px;">
+                                <i class="fa fa-map-marker-alt text-primary "></i>
                             </div>
                             <div class="ms-4">
                                 <p class="mb-2"><?php echo constant("page_contact_5") ?></p>
-                                <h4 class="mb-0"><?php echo constant("page_contact_6") ?></h4>
+                                <h5 class="mb-0"><?php echo constant("page_contact_6") ?></h5>
                             </div>
                         </div>
-                        <div class="bg-light d-flex align-items-center w-100 p-4 mb-4">
-                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 55px; height: 55px;">
-                                <i class="fa fa-phone-alt text-primary"></i>
+                        <div class="bg-light d-flex align-items-center w-100 p-4 mt-4">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width:50px; height: 50px;">
+                                <i class="fa fa-phone-alt text-primary "></i>
                             </div>
                             <div class="ms-4">
                                 <p class="mb-2"><?php echo constant("page_contact_7") ?></p>
-                                <h4 class="mb-0">+66 21 195 300</h4>
+                                <h5 class="mb-0">+66 21 195 300</h5>
                             </div>
                         </div>
-                        <div class="bg-light d-flex align-items-center w-100 p-4">
-                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 55px; height: 55px;">
-                                <i class="fa fa-envelope-open text-primary"></i>
+                        <div class="bg-light d-flex align-items-center w-100 p-4 mt-4">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 50px; height: 50px;">
+                                <i class="fa fa-envelope-open text-primary "></i>
                             </div>
                             <div class="ms-4">
                                 <p class="mb-2"><?php echo constant("page_contact_8") ?></p>
-                                <h4 class="mb-0">hello@wisepaq.com</h4>
+                                <h5 class="mb-0">hello@wisepaq.com</h5>
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@ include "includes/db.php";
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     
                     <form>
-                        <div class="row g-3 mt-5">
+                        <div class="row g-3 mt-4">
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="name" placeholder="Your Name">
