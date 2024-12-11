@@ -100,16 +100,21 @@ define('page_service_9','Cargo Storage');
 define('page_service_10','Complete warehouse management service with WMS system, controlling product picking and distribution.');
 
 //contact.php
-define('page_contact_1','Contact');
-define('page_contact_2','Home');
-define('page_contact_3','Contact Us');
-define('page_contact_2.1','If you have any questions or we can support your business. Please contact us.');
-define('page_contact_4','Your Name');
-define('page_contact_5',' Your Email');
-define('page_contact_6','Subject');
-define('page_contact_7','Message');
-define('page_contact_8','Leave a message here');
-define('page_contact_9','Send Message');
+define('page_contact_1','Contact Us');
+define('page_contact_2','HOME');
+define('page_contact_3','CONTACT US');
+define('page_contact_31','Contact Us');
+define('page_contact_4','If you have any questions or we can support your business. Please contact us.');
+define('page_contact_5','Address');
+define('page_contact_6','116/69 SSP Tower 2, 19th Floor, Na Ranong Road, Klongtoey, Klongtoey Bangkok, Thailand 10110');
+define('page_contact_7','Call Us Now');
+define('page_contact_8','Mail Us Now');
+define('page_contact_9','Your Name');
+define('page_contact_91',' Your Email');
+define('page_contact_92','Subject');
+define('page_contact_93','Message');
+define('page_contact_94','Leave a message here');
+define('page_contact_95','Send Message');
 
 
 
