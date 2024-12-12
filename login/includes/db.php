@@ -4,7 +4,7 @@ date_default_timezone_set('Asia/Bangkok');
 $db["db_host"] = "localhost";
 $db["db_user"] = "root";
 $db["db_pass"] = "";
-$db["db_name"] = "wisepaq";
+$db["db_name"] = "wisepaq_db";
 
 foreach ($db as $key => $value) {
     define(strtoupper($key), $value);
