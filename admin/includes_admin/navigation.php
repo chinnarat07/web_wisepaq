@@ -11,6 +11,7 @@ session_start();
             <ul class="nav navbar-nav">
                  <li><a href='../index.php'>Website</a></li>
                  <li><a href='index.php'>Log in</a></li>
+                 <li><a href='./backend/posts.php'>Post</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

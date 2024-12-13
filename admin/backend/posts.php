@@ -1,13 +1,13 @@
 <?php
-include "includes/header.php";
-include "includes/navigation.php";
+include "includes_backend/header.php";
+include "includes_backend/navigation.php";
 
 // Add new Category.
 $error_message = "";
 if (isset($_POST["submit"])) {
     $cat_title = $_POST['cat_title'];
     if (!empty($cat_title) || $cat_title != "") {
-        $query = "INSERT INTO categories (cat_title) VALUES('$cat_title'); ";
+        $query = "INSERT INTO tbl_categories (cat_title) VALUES('$cat_title'); ";
         $create_query = mysqli_query($connection, $query);
         if (!$create_query) {
             die("Query Failed: " . mysqli_error($connection));
@@ -20,7 +20,7 @@ if (isset($_POST["submit"])) {
 // Delete Category.
 if (isset($_GET["delete"])) {
     $cat_id = $_GET['delete'];
-    $query = "DELETE FROM categories WHERE cat_id=$cat_id";
+    $query = "DELETE FROM tbl_categories WHERE cat_id=$cat_id";
     $delete_query = mysqli_query($connection, $query);
     header("Location: posts.php");
     if (!$delete_query) {
@@ -33,7 +33,7 @@ if (isset($_GET["edit"], $_POST["update_category"])) {
     $cat_id = $_GET['edit'];
     $cat_title = $_POST["cat_title"];
     $cat_title_thai = $_POST["cat_title_thai"];
-    $query = "UPDATE categories SET cat_title='$cat_title', cat_title_thai='$cat_title_thai'      WHERE cat_id=$cat_id";
+    $query = "UPDATE tbl_categories SET cat_title='$cat_title', cat_title_thai='$cat_title_thai'      WHERE cat_id=$cat_id";
     $update_query = mysqli_query($connection, $query);
     header("Location: categories.php");
     if (!$update_query) {
@@ -45,7 +45,7 @@ if (isset($_GET["edit"], $_POST["update_category"])) {
 if (isset($_GET["deletePost"])) {
     $post_id = $_GET['deletePost'];
     $post_image = $_GET['image'];  
-    $query = "DELETE FROM posts WHERE post_id=$post_id";
+    $query = "DELETE FROM tbl_posts WHERE post_id=$post_id";
     $delete_query = mysqli_query($connection, $query);
     unlink('../images/'.$post_image);
     header("Location: posts.php");
@@ -76,13 +76,13 @@ if (isset($_GET["deletePost"])) {
                 }
                 switch ($source) {
                     case 'add_post':
-                        include "./includes/add_post.php";
+                        include "./includes_backend/add_post.php";
                         break;
                     case 'edit_post':
-                        include "./includes/edit_post.php";
+                        include "./includes_backend/edit_post.php";
                         break;
                     default:
-                        include "./includes/view_all_posts.php";
+                        include "./includes_backend/view_all_posts.php";
                         break;
                 }
                 ?>
@@ -91,4 +91,4 @@ if (isset($_GET["deletePost"])) {
     </div>
 </div>
 
-<?php include "includes/footer.php" ?>
+<?php include "includes_backend/footer.php" ?>

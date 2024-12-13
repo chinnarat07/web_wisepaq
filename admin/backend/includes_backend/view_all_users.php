@@ -2,7 +2,7 @@
 // Delete User.
 if (isset($_GET["delete"])) {
             $user_id = mysqli_real_escape_string($connection, $_GET['delete']);
-            $query = "DELETE FROM users WHERE user_id=$user_id";
+            $query = "DELETE FROM tbl_users WHERE user_id=$user_id";
             $delete_query = mysqli_query($connection, $query);
             header("Location: users.php");
             if (!$delete_query) {
@@ -25,7 +25,7 @@ if (isset($_GET["delete"])) {
     </thead>
     <tbody>
         <?php
-        $query = "SELECT * FROM users";
+        $query = "SELECT * FROM tbl_users";
         $fetch_posts_data = mysqli_query($connection, $query);
         while ($Row = mysqli_fetch_assoc($fetch_posts_data)) {
 

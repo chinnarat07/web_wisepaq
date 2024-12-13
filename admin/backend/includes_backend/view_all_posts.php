@@ -4,7 +4,7 @@ if (isset($_GET["deletePost"])) {
 echo 'aaaaa';exit;
     $post_id = $_GET['deletePost'];
     $post_image = $_GET['image'];  
-    $query = "DELETE FROM posts WHERE post_id=$post_id";
+    $query = "DELETE FROM tbl_posts WHERE post_id=$post_id";
     $delete_query = mysqli_query($connection, $query);
     header("Location: posts.php");
     if (!$delete_query) {
@@ -18,7 +18,7 @@ if (isset($_POST["apply"])) {
             $bulk_option = $_POST['bulk_option'];
             switch ($bulk_option) {
                 case 'Published':
-                    $query = "UPDATE posts SET post_status='$bulk_option' WHERE post_id=$checkBoxValue";
+                    $query = "UPDATE tbl_posts SET tbl_post_status='$bulk_option' WHERE post_id=$checkBoxValue";
                     $update_post = mysqli_query($connection, $query);
                     echo "<p class='alert alert-success'>Post published successfully.</p>";
                     if (!$update_post) {
@@ -26,7 +26,7 @@ if (isset($_POST["apply"])) {
                     }
                     break;
                 case 'Draft':
-                    $query = "UPDATE posts SET post_status='$bulk_option' WHERE post_id=$checkBoxValue";
+                    $query = "UPDATE tbl_posts SET post_status='$bulk_option' WHERE post_id=$checkBoxValue";
                     $update_post = mysqli_query($connection, $query);
                     echo "<p class='alert alert-success'>Post draftted successfully.</p>";
                     if (!$update_post) {
@@ -34,7 +34,7 @@ if (isset($_POST["apply"])) {
                     }
                     break;
                 case 'Delete':
-                    $query = "DELETE FROM posts WHERE post_id=$checkBoxValue";
+                    $query = "DELETE FROM tbl_posts WHERE post_id=$checkBoxValue";
                     $update_post = mysqli_query($connection, $query);
                     echo "<p class='alert alert-success'>Post deleted successfully.</p>";
                     if (!$update_post) {
@@ -84,7 +84,7 @@ if (isset($_POST["apply"])) {
             </thead>
             <tbody>
                 <?php
-                $query = "SELECT * FROM posts";
+                $query = "SELECT * FROM tbl_posts";
                 $fetch_posts_data = mysqli_query($connection, $query);
                 while ($Row = mysqli_fetch_assoc($fetch_posts_data)) {
                     $the_post_id = $Row['post_id'];
@@ -93,11 +93,11 @@ if (isset($_POST["apply"])) {
                     <td><input type='checkbox' name='checkBoxArray[]' value='<?php echo $the_post_id ?>'></td>
                 <?php
                     echo "<td>{$Row['post_id']}</td>
-                    <td><a href='../post.php?p_id=$the_post_id'>{$Row['post_title']}</a></td>
-                    <td><a href='../post.php?p_id=$the_post_id'>{$Row['post_title_thai']}</a></td>";
+                    <td><a href='../post.php?lang=en&p_id=$the_post_id'>{$Row['post_title']}</a></td>
+                    <td><a href='../post.php?lang=th&p_id=$the_post_id'>{$Row['post_title_thai']}</a></td>";
 
                     $cat_id = $Row['post_category_id'];
-                    $query = "SELECT * FROM categories WHERE cat_id=$cat_id";
+                    $query = "SELECT * FROM tbl_categories WHERE cat_id=$cat_id";
                     $fetch_cat_data = mysqli_query($connection, $query);
                     while ($Cat = mysqli_fetch_assoc($fetch_cat_data)) {
                         $cat_title = $Cat["cat_title"];

@@ -3,17 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/web_wisepaq/login/admin/js/ckeditor.js</file>
-            <file>file:/C:/xampp/htdocs/web_wisepaq/login/admin/categories.php</file>
-            <file>file:/C:/xampp/htdocs/web_wisepaq/lang_th.php</file>
-            <file>file:/C:/xampp/htdocs/web_wisepaq/login/admin/includes/edit_post.php</file>
-            <file>file:/C:/xampp/htdocs/web_wisepaq/login/admin/js/jquery.js</file>
-            <file>file:/C:/xampp/htdocs/web_wisepaq/login/admin/js/bootstrap.min.js</file>
-            <file>file:/C:/xampp/htdocs/web_wisepaq/login/admin/profile.php</file>
-            <file>file:/C:/xampp/htdocs/web_wisepaq/lang_en.php</file>
-            <file>file:/C:/xampp/htdocs/web_wisepaq/login/admin/js/bootstrap.js</file>
-            <file>file:/C:/xampp/htdocs/web_wisepaq/login/includes/db.php</file>
-            <file>file:/C:/xampp/htdocs/web_wisepaq/login/admin/index.php</file>
+            <file>file:/C:/xampp/htdocs/web_wisepaq/admin/backend/includes_backend/edit_user.php</file>
+            <file>file:/C:/xampp/htdocs/web_wisepaq/admin/backend/users.php</file>
+            <file>file:/C:/xampp/htdocs/web_wisepaq/about.php</file>
         </group>
     </open-files>
 </project-private>

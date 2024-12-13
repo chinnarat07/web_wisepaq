@@ -1,7 +1,7 @@
   <!-- Login Form -->
     <div class="well">
    
-        <form action="includes/login.php" method="POST">
+        <form action="includes_admin/login.php" method="POST">
                  <h4 style="text-align: center">Login</h4>
             <div class="form-group">
                 <input type="text" name="username" class="form-control" placeholder="Enter Username">

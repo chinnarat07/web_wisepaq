@@ -1,6 +1,6 @@
 <?php
-include "includes/header.php";
-include "includes/navigation.php";
+include "includes_backend/header.php";
+include "includes_backend/navigation.php";
 
 ?>
 
@@ -35,7 +35,7 @@ include "includes/navigation.php";
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                        $query = "SELECT * FROM posts";
+                                        $query = "SELECT * FROM tbl_posts";
                                         $select_all_posts = mysqli_query($connection, $query);
                                         $posts_count = mysqli_num_rows($select_all_posts);
 
@@ -65,7 +65,7 @@ include "includes/navigation.php";
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                        $query = "SELECT * FROM users";
+                                        $query = "SELECT * FROM tbl_users";
                                         $select_all_users = mysqli_query($connection, $query);
                                         $users_count = mysqli_num_rows($select_all_users);
                                         ?>
@@ -92,7 +92,7 @@ include "includes/navigation.php";
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                        $query = "SELECT * FROM categories";
+                                        $query = "SELECT * FROM tbl_categories";
                                         $select_all_categories = mysqli_query($connection, $query);
                                         $categories_count = mysqli_num_rows($select_all_categories);
                                         ?>
@@ -115,11 +115,11 @@ include "includes/navigation.php";
         </div>
         <?php
 
-        $query = "SELECT * FROM posts WHERE post_status='Published'";
+        $query = "SELECT * FROM tbl_posts WHERE post_status='Published'";
         $select_active_posts = mysqli_query($connection, $query);
         $active_posts_count = mysqli_num_rows($select_active_posts);
 
-        $query = "SELECT * FROM posts WHERE post_status='Draft'";
+        $query = "SELECT * FROM tbl_posts WHERE post_status='Draft'";
         $select_draft_posts = mysqli_query($connection, $query);
         $draft_posts_count = mysqli_num_rows($select_draft_posts);
         ?>
@@ -150,4 +150,4 @@ include "includes/navigation.php";
     </div>
 </div>
 
-<?php include "includes/footer.php" ?>
+<?php include "includes_backend/footer.php" ?>

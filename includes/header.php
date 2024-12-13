@@ -15,6 +15,37 @@ include('lang_' . $_SESSION['lang'] . '.php');
 </div> -->
 <!-- Spinner End -->
 
+<head>
+    <meta charset="utf-8">
+    <title>WISEPAQ | วางระบบ network | Thailand</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/wisepaq.jpg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
 <!-- Topbar Start -->
 <div class="container-fluid bg-light p-0">
     <div class="row gx-0 d-none d-lg-flex">
@@ -54,7 +85,7 @@ include('lang_' . $_SESSION['lang'] . '.php');
     <div class="collapse navbar-collapse " id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <?php
-            $query = "SELECT * FROM  menu";
+            $query = "SELECT * FROM  tbl_menu";
             $fetch_data = mysqli_query($connection, $query);
 
             if (mysqli_num_rows($fetch_data) == 0) {
@@ -70,7 +101,7 @@ include('lang_' . $_SESSION['lang'] . '.php');
                     }
                     $link = $Row['link_name'];
 
-                    $query_sub = "SELECT * FROM sub_menu where menu_id = $menu_id";
+                    $query_sub = "SELECT * FROM tbl_sub_menu where menu_id = $menu_id";
                     $fetch_data_sub = mysqli_query($connection, $query_sub);
 
                     if (mysqli_num_rows($fetch_data_sub) == 0) {

@@ -1,6 +1,6 @@
 <?php
 ob_start();
-include "../includes/db.php";
+include '../../includes/db.php';
 session_start();
 ?>
 <!DOCTYPE html>

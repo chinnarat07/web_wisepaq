@@ -8,20 +8,27 @@ if (isset($_POST['update_post'], $_GET['p_id'])) {
     $post_category_id = $_POST['post_category'];
     $post_status = $_POST['post_status'];
   
+    $post_content = base64_encode($_POST['post_content']);
+    $post_content_thai = base64_encode($_POST['post_content_thai']);     
+     $post_date =   date("Y-m-d H:i:s");//date('d-m-y');    
+    
     $post_image_old = $_POST['post_image_old'];
-    $path = $_FILES['post_image']['name'];
-    $ext = pathinfo($path, PATHINFO_EXTENSION);
-    $post_image =strtotime(date("Y-m-d H:i:s")).'.'.$ext;
-    $post_image_temp = $_FILES['post_image']['tmp_name'];
 
-    $post_content = $_POST['post_content'];
-    $post_content_thai = $_POST['post_content_thai'];  
-    $post_date =   date("Y-m-d H:i:s");//date('d-m-y');
-    unlink("../images/$post_image_old");
-    move_uploaded_file($post_image_temp, "../images/$post_image");
+    $post_image_temp = $_FILES['post_image']['tmp_name'];  
+    if(strlen($post_image_temp)>0){
+          $path = $_FILES['post_image']['name'];
+          $ext = pathinfo($path, PATHINFO_EXTENSION);
+          $post_image =strtotime(date("Y-m-d H:i:s")).'.'.$ext;
 
+        
+            unlink("../images/$post_image_old");
+            move_uploaded_file($post_image_temp, "../images/$post_image");
+    }else{
+           $post_image =$post_image_old;
+    }
+    
     // Update a Post.
-    $query = "UPDATE posts SET ";
+    $query = "UPDATE tbl_posts SET ";
     $query .= "post_category_id='$post_category_id', ";
     $query .= "post_title='$post_title', ";
     $query .= "post_title_thai='$post_title_thai', ";
@@ -31,8 +38,9 @@ if (isset($_POST['update_post'], $_GET['p_id'])) {
     $query .= "post_content_thai='$post_content_thai', ";   
     $query .= "post_status='$post_status' ";
     $query .= "WHERE post_id=$the_post_id";
-
-    $update_post_query = mysqli_query($connection, $query);
+    
+  //   $query = mysqli_real_escape_string($connection, $query);
+     $update_post_query = mysqli_query($connection, $query);
     if (!$update_post_query) {
         die("Query Failed: " . mysqli_error($connection));
     }
@@ -46,7 +54,7 @@ if (isset($_POST['update_post'], $_GET['p_id'])) {
 <?php
 if (isset($_GET['p_id'])) {
     $the_post_id = $_GET['p_id'];
-    $query = "SELECT * FROM posts WHERE post_id=$the_post_id";
+    $query = "SELECT * FROM tbl_posts WHERE post_id=$the_post_id";
     $fetch_data = mysqli_query($connection, $query);
     while ($Row = mysqli_fetch_assoc($fetch_data)) {
         $post_id = $Row['post_id'];
@@ -57,8 +65,8 @@ if (isset($_GET['p_id'])) {
         $post_image_old = $Row['post_image'];
         $post_image = $Row['post_image'];
         $post_date = $Row['post_date'];
-        $post_content = $Row['post_content'];
-        $post_content_thai = $Row['post_content_thai'];     
+        $post_content = base64_decode($Row['post_content']);
+        $post_content_thai = base64_decode($Row['post_content_thai']);     
         ?>
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
@@ -75,7 +83,7 @@ if (isset($_GET['p_id'])) {
                 <label for="post_category">Post Category ID</label>
                 <select class="form-control" name="post_category" id="post_category">
                     <?php
-                            $query = "SELECT * FROM categories";
+                            $query = "SELECT * FROM tbl_categories";
                             $fetch_data = mysqli_query($connection, $query);
                             while ($Row = mysqli_fetch_assoc($fetch_data)) {
                                 $cat_id = $Row["cat_id"];

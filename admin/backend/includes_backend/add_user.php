@@ -8,7 +8,7 @@ if (isset($_POST['add_user'])) {
 
         // Check exist user.
          $user=1;
-        $queryExist = "SELECT EXISTS(SELECT * FROM users WHERE user_name = '$user_name') as user";
+        $queryExist = "SELECT EXISTS(SELECT * FROM tbl_users WHERE user_name = '$user_name') as user";
          $fetch_data = mysqli_query($connection, $queryExist);
               while ($Row = mysqli_fetch_assoc($fetch_data)) {
                                   $user = $Row['user'];
@@ -17,14 +17,14 @@ if (isset($_POST['add_user'])) {
     if($user==0){
     
         // Add new user.
-        $query = "INSERT INTO users(user_firstname, user_lastname, user_name, user_password, user_email) ";
+        $query = "INSERT INTO tbl_users(user_firstname, user_lastname, user_name, user_password, user_email) ";
         $query .= "VALUES('{$user_firstname}', '{$user_lastname}', '{$user_name}', '{$user_password}', '{$user_email}')";
 
         $create_user_query = mysqli_query($connection, $query);
         if (!$create_user_query) {
             die("Query Failed: " . mysqli_error($connection));
         }
-        header("Location: ../admin/index.php");
+        header("Location: ../backend/index.php");
         echo "User Created " . "<a href='users.php'>View Users</a>";
     }else{
           echo "<script>alert('This user already in the system!');window.history.go(-1);</script>";           

@@ -1,8 +1,7 @@
 <?php
-include "includes/db.php";
 /* Page Header and navigation */
-include "includes/header.php";
-include "includes/navigation.php";
+include "includes_admin/header.php";
+include "includes_admin/navigation.php";
 ?>
 
 <!-- Page Content -->
@@ -10,11 +9,11 @@ include "includes/navigation.php";
 
     <div  style="width:500px; margin:0 auto;"">
         <?php
-        include "includes/sidebar.php"
+        include "includes_admin/sidebar.php"
         ?>
     </div>
     <!-- /.row -->
     <?php
     /* Page Footer */
-    include "includes/footer.php"
+    include "includes_admin/footer.php"
     ?>

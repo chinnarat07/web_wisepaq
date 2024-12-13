@@ -1,6 +1,6 @@
 <?php
-include "includes/header.php";
-include "includes/navigation.php";
+include "includes_backend/header.php";
+include "includes_backend/navigation.php";
 ?>
 
 <div id="page-wrapper">
@@ -21,13 +21,13 @@ include "includes/navigation.php";
                 }
                 switch ($source) {
                     case 'add_user':
-                        include "./includes/add_user.php";
+                        include "./includes_backend/add_user.php";
                         break;
                     case 'edit_user':
-                        include "./includes/edit_user.php";
+                        include "./includes_backend/edit_user.php";
                         break;
                     default:
-                        include "./includes/view_all_users.php";
+                        include "./includes_backend/view_all_users.php";
                         break;
                 }
                 ?>
@@ -36,4 +36,4 @@ include "includes/navigation.php";
     </div>
 </div>
 
-<?php include "includes/footer.php" ?>
+<?php include "includes_backend/footer.php" ?>

@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+include '../../includes/db.php';
 session_start();
 
 if (isset($_POST['login'])) {
@@ -9,7 +9,7 @@ if (isset($_POST['login'])) {
     $username = mysqli_real_escape_string($connection, $username);
     $password = mysqli_real_escape_string($connection, $password);
 
-    $query = "SELECT * FROM users WHERE user_name='$username'";
+    $query = "SELECT * FROM tbl_users WHERE user_name='$username'";
     $select_user_query = mysqli_query($connection, $query);
     if (!$select_user_query) {
         die("Query Failed: " . mysqli_error($connection));
@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
                         $_SESSION['username'] = $user_name;
                         $_SESSION['firstname'] = $user_firstname;
                         $_SESSION['lastname'] = $user_lastname;
-                        header("Location: ../admin/index.php");
+                        header("Location: ../backend/index.php");
                 }else{
                          echo "<script>alert('User Or Password not correct!!');window.history.go(-1);</script>";           
                 }

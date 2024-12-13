@@ -165,7 +165,7 @@ include "includes/db.php";
             </div>
             <div class="row g-4">
                 <?php
-                $query = "SELECT * FROM services";
+                $query = "SELECT * FROM tbl_services";
                 $fetch_data = mysqli_query($connection, $query);
                 if (mysqli_num_rows($fetch_data) == 0) {
                     //echo "<h1 class='text-center'>No content Found</h1>";
@@ -494,7 +494,7 @@ include "includes/db.php";
             </div>
             <div class="row g-4">
                 <?php
-                $query_partner = "SELECT * FROM images";
+                $query_partner = "SELECT * FROM tbl_images";
                 $fetch_data_partners = mysqli_query($connection, $query_partner);
                 if (mysqli_num_rows($fetch_data_partners) == 0) {
                     //echo "<h1 class='text-center'>No content Found</h1>";

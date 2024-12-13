@@ -18,7 +18,7 @@ if (isset($_POST['create_post'])) {
     move_uploaded_file($post_image_temp, "../images/$post_image");
 
     // Add new Post.
-    $query = "INSERT INTO posts(post_category_id, post_title, post_title_thai, post_date, post_image, post_content, post_content_thai, post_status) ";
+    $query = "INSERT INTO tbl_posts(post_category_id, post_title, post_title_thai, post_date, post_image, post_content, post_content_thai, post_status) ";
     $query .= "VALUES({$post_category_id}, '{$post_title}', '{$post_title_thai}', '{$post_date}', '{$post_image}', '{$post_content}', '{$post_content_thai}',  '{$post_status}')";
     $create_post_query = mysqli_query($connection, $query);
     $the_post_id = mysqli_insert_id($connection);
@@ -46,7 +46,7 @@ if (isset($_POST['create_post'])) {
         <label for="post_category">Post Category</label>
         <select class="form-control" name="post_category" id="post_category">
             <?php
-            $query = "SELECT * FROM categories";
+            $query = "SELECT * FROM tbl_categories";
             $fetch_data = mysqli_query($connection, $query);
             while ($Row = mysqli_fetch_assoc($fetch_data)) {
                 $cat_id = $Row["cat_id"];
