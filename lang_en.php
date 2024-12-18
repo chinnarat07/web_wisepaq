@@ -60,15 +60,25 @@ define('page_index_slide_1', 'Global leader in third-party logistics');
 define('page_index_slide_2', 'Offering customized, turnkey solutions for your logistics needs.');
 define('page_index_slide_3', 'Focus on designing customized, turnkey solutions.');
 
+define('page_contact_form_1','Contact Us');
+define('page_contact_form_2','If you have any questions or we can support your business. Please contact us.');
+define('page_contact_form_3','Your Name');
+define('page_contact_form_4','Your Email');
+define('page_contact_form_5','Your Mobile');
+define('page_contact_form_6','Subject');
+define('page_contact_form_7','Leave a message here');
+define('page_contact_form_8','Send Message');
+
 
 
 //about.php
-define('page_about_1','ABOUT US');
-define('page_about_2','Faster, Safe and Trusted Logistics Services');
-define('page_about_3','Global leader in third-party logistics It provides and operates global transportation and supply chain solutions to connect people, products and service providers around the world.'); 
-define('page_about_4','It offers customized, turnkey solutions in contract logistics and air, sea, land and prefabricated vehicle transport. Worldwide with 110,000 employees, operating from more than 1,500 facilities in more than 170 countries, experts experienced'); 
-define('page_about_5','Focused on designing seamless, customized end-to-end solutions to meet the needs of complex and rapidly changing supply chains. No matter what business sector'); 
-define('page_about_6','It is part of the CMA CGM Group, a global leader in transport and logistics.');
+define('page_about_1','About Us');
+define('page_about_2','HOME');
+define('page_about_3','ABOUT US');
+define('page_about_4','About Us');
+define('page_about_5','Years of <br> Experience'); 
+define('page_about_6','Email Us'); 
+define('page_about_7','Call us');
 
 
 //vision.php

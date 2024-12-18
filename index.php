@@ -156,7 +156,7 @@ include "includes/db.php";
     </div>
     <!-- About End -->
 
-    <!-- Service Start -->
+    <!-- Service Start2 -->
     <div class="container-xxl py-5">
         <div class="container py-5 section-title">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -165,32 +165,29 @@ include "includes/db.php";
             </div>
             <div class="row g-4">
                 <?php
-                $query = "SELECT * FROM tbl_services";
-                $fetch_data = mysqli_query($connection, $query);
-                if (mysqli_num_rows($fetch_data) == 0) {
+                $query = "SELECT * FROM tbl_posts inner join tbl_categories on tbl_categories.cat_id = tbl_posts.post_category_id   where tbl_categories.cat_page=1 AND tbl_posts.post_status='Published'";
+                $fetch_post_service = mysqli_query($connection, $query);
+                if (mysqli_num_rows($fetch_post_service) == 0) {
                     //echo "<h1 class='text-center'>No content Found</h1>";
                 } else {
-                    while ($Row = mysqli_fetch_assoc($fetch_data)) {
+                    while ($Row = mysqli_fetch_assoc($fetch_post_service)) {
                         $count = 0.3;
-                        $ser_img =  $Row['ser_img'];
+                        $the_post_image =  $Row['post_image'];
                         if ($_SESSION['lang'] == 'en') {
-                            $ser_title = $Row['ser_title'];
-                            $ser_topic = $Row['ser_topic'];
-                            $ser_description = $Row['ser_description'];
+                            $the_post_service_title = $Row['post_title'];
+                            $the_post_description = base64_decode($Row['post_content']);
                         } else {
-                            $ser_title = $Row['ser_title_th'];
-                            $ser_topic = $Row['ser_topic_th'];
-                            $ser_description = $Row['ser_description_th'];
+                            $the_post_service_title = $Row['post_title_thai'];
+                            $the_post_description = base64_decode($Row['post_content_thai']);
                         }
                 ?>
                         <div class="col-md-6 col-lg-4 wow fadeInUp d-flex" data-wow-delay="<?php echo $count <= 0.5 ? $count . "s" : $count = 0.3 . "s" ?>">
                             <div class="service-item p-4 flex-grow-1 d-flex flex-column position-relative">
                                 <div class="overflow-hidden mb-4">
-                                    <img class="img-fluid" src="img/<?php echo $ser_img; ?>" alt="">
+                                <img class="img-fluid" src="<?php echo "admin/images/" . $the_post_image; ?>"  alt="">
                                 </div>
-                                <h4 class="mb-3 text-center"><?php echo $ser_title; ?></h4>
-                                <p class="mb-0 text-center"><b><?php echo $ser_topic; ?></b></p>
-                                <p class="text-start pb-5" style="text-indent: 2.5em;"><?php echo $ser_description; ?></p>
+                                <h4 class=" text-center"><?php echo $the_post_service_title; ?></h4>
+                                <span class="text-start pb-5 " style="text-indent: 2.5em;"><?php echo $the_post_description; ?></span>
                                 <a class="btn-slide mt-2 position-absolute" style="bottom: 10px; left: 10px;" href="#">
                                     <i class="fa fa-arrow-right"></i>
                                     <span><?php echo constant("page_content_6"); ?></span>
@@ -324,7 +321,7 @@ include "includes/db.php";
 
 
     <!-- Projects Start -->
-    <!-- <div class="container-xxl py-5">
+    <div class="container-xxl py-5">
         <div class="container">
             <div class="section-title text-center">
                 <h1 class="display-5 mb-5">Our Projects</h1>
@@ -431,11 +428,11 @@ include "includes/db.php";
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- Projects End -->
 
 
-    <!-- Quote Start -->
+    <!-- Contact Start -->
     <!-- <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container quote px-lg-0">
             <div class="row g-0 mx-lg-0">
@@ -511,204 +508,55 @@ include "includes/db.php";
                         </div>
                 <?php }
                 } ?>
-             
-                <!-- <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-3 pt-4 " src="img/vmware_workstation_logo.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid" src="img/logitech.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative text-center">
-                            <img class="img-fluid pt-4" src="img/nutanixx.jpg" alt="">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid  pt-5 " src="img/Ruijie-Logo-Singapore.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid mt-2 p-4 pt-5" src="img/wallix.avif" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pt-2 " src="img/fortinet-logo.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid  pt-4 ps-4 pe-4 pb-2 " src="img/Watchguard_logo.svg.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pt-1 " src="img/922390-1200x549.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid ps-4 p-3" src="img/RBiv_Pq8gipuJpKcsR9anC1-TajDrQMFB9Pvw-U3qII.jpeg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-4  " src="img/Pasted-into-.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid ps-2 pe-1 pt-4 " src="img/14b63d857e526037e772c97b122fdbaf.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-4 " src="img/Cisco_logo-1000px.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pt-3" src="img/kaspersky-rebranding-in-details-1.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-4 pt-5" src="img/pi_logo.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid " src="img/bitdefender1.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid " src="img/veritas6808.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pt-2 " src="img/extreme_partner_network.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pb-5 h-25" src="img/symphony1.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-3 pt-5" src="img/logoaisfibre2.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-4" src="img/ais-logo - Copy2.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid p-4 pt-5" src="img/140344_3.webp" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid pt-5" src="img/SolarWinds-Logo.wine.svg" alt="">
-                        </div>
-                    </div>
-                </div> -->
-
             </div>
         </div>
     </div>
     <!-- Team End -->
 
-    <!-- Testimonial Start -->
-    <!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Testimonial</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 90px; height: 90px;">
-                    <div class="testimonial-text text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
+    <!-- Quote Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container quote px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15504.243776250698!2d100.5580155!3d13.7147587!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a1e14e5f1c45%3A0x96187e02d34a4e78!2sWisepaq%20Business%20Solutions%20Provider%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1733478257715!5m2!1sth!2sth" 
+                        width="750" height="600" style="border:0;"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 90px; height: 90px;">
-                    <div class="testimonial-text text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 90px; height: 90px;">
-                    <div class="testimonial-text text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
+                <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4"><?php echo constant('page_contact_form_1') ?></h1>
+                        </div>
+                        <p class="mb-4 pb-2"><?php echo constant('page_contact_form_2') ?></p>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="<?php echo constant('page_contact_form_3') ?>" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" placeholder="<?php echo constant('page_contact_form_4') ?>" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="<?php echo constant('page_contact_form_5') ?>" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="<?php echo constant('page_contact_form_6') ?>" style="height: 55px;">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="<?php echo constant('page_contact_form_7') ?>"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit"><?php echo constant('page_contact_form_8') ?></button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div> -->
-    <!-- Testimonial End -->
-
+    </div>
+    <!-- Contact End -->
     <?php include("./includes/footer.php") ?>
 
     <!-- JavaScript Libraries -->

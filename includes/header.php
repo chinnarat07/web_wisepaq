@@ -47,7 +47,29 @@ include('lang_' . $_SESSION['lang'] . '.php');
 </head>
 
 <!-- Topbar Start -->
-<div class="container-fluid bg-light p-0">
+<div class="container-fluid bg-dark px-0">
+        <div class="row g-0 d-none d-lg-flex">
+            <div class="col-lg-6 ps-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center text-white">
+                    <span>Follow Us:</span>
+                    <a class="btn btn-link text-light" href="https://www.facebook.com/Wisepaqbusiness/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-link text-light" href="https://twitter.com/Wisepaq" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-link text-light" href="https://www.youtube.com/@Wisepaq-business/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-end">
+                <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
+                    <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
+                    <span class="fs-5 fw-bold">021 195 300, 081 935 9559, 089 615 5559</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+<!-- Topbar Start -->
+<!-- <div class="container-fluid bg-light p-0">
     <div class="row gx-0 d-none d-lg-flex">
         <div class="col-lg-7 px-5 text-start">
             <div class="h-100 d-inline-flex align-items-center py-3 me-4">
@@ -71,7 +93,7 @@ include('lang_' . $_SESSION['lang'] . '.php');
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Topbar End -->
 
 <!-- Navbar Start -->
@@ -107,7 +129,7 @@ include('lang_' . $_SESSION['lang'] . '.php');
                     if (mysqli_num_rows($fetch_data_sub) == 0) {
                         //echo "<h1 class='text-center'>No content Found</h1>";
                         ?>
-                        <a href="<?php echo $link; ?>" class="nav-item nav-link "><?php echo $menu_title; ?></a>
+                        <a href="<?php echo $link; ?>" class="nav-item nav-link  "><?php echo $menu_title; ?></a>
 
                         <?php
                     } else {
@@ -134,10 +156,10 @@ include('lang_' . $_SESSION['lang'] . '.php');
             ?>
         </div>
         <div class="btn-group btn-group-toggle me-4 " data-toggle="buttons">
-            <label class="btn btn-primary ">
-                <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="th"> TH
+            <label class="btn btn-primary text-light">
+                <input type="radio" style="appearance: none; " id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="th"> TH
             </label>
-            <label class="btn btn-primary active ">
+            <label class="btn btn-primary text-light active ">
                 <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="en"> EN
             </label>
         </div>
