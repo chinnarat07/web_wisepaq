@@ -22,8 +22,10 @@ $errMessage = false;
             $post_id = $Row['post_id'];
             if ($lang=='en'){
                     $post_title = $Row['post_title'];
+                    $post_subtitle = $Row['post_subtitle'];
             }else{
                    $post_title = $Row['post_title_thai'];
+                   $post_subtitle = $Row['post_subtitle_thai'];
             }
             
            
@@ -45,6 +47,9 @@ $errMessage = false;
 
                     <!-- Title -->
                     <h1><?php echo $post_title; ?></h1>
+
+                    <!-- Subtitle -->
+                    <h3><?php echo $post_subtitle; ?></h3>
 
                     <!-- Author -->
                     <p class="lead">

@@ -2,6 +2,8 @@
 if (isset($_POST['create_post'])) {
     $post_title = $_POST['title'];
     $post_title_thai = $_POST['title_thai'];
+    $post_subtitle = $_POST['subtitle'];
+    $post_subtitle_thai = $_POST['subtitle_thai'];
     $post_category_id = $_POST['post_category'];
     $post_status = $_POST['post_status'];
 
@@ -18,8 +20,8 @@ if (isset($_POST['create_post'])) {
     move_uploaded_file($post_image_temp, "../images/$post_image");
 
     // Add new Post.
-    $query = "INSERT INTO tbl_posts(post_category_id, post_title, post_title_thai, post_date, post_image, post_content, post_content_thai, post_status) ";
-    $query .= "VALUES({$post_category_id}, '{$post_title}', '{$post_title_thai}', '{$post_date}', '{$post_image}', '{$post_content}', '{$post_content_thai}',  '{$post_status}')";
+    $query = "INSERT INTO tbl_posts(post_category_id, post_title, post_title_thai, post_date, post_image, post_content, post_content_thai, post_status,post_subtitle,post_subtitle_thai) ";
+    $query .= "VALUES({$post_category_id}, '{$post_title}', '{$post_title_thai}', '{$post_date}', '{$post_image}', '{$post_content}', '{$post_content_thai}',  '{$post_status}','{$post_subtitle}','{$post_subtitle_thai}')";
     $create_post_query = mysqli_query($connection, $query);
     $the_post_id = mysqli_insert_id($connection);
     if (!$create_post_query) {
@@ -41,7 +43,14 @@ if (isset($_POST['create_post'])) {
         <label for="title">[ภาษาไทย] Post Title</label>
         <input type="text" class="form-control" name="title_thai">
     </div>
-
+    <div class="form-group">
+        <label for="subtitle">Post subtitle</label>
+        <input type="text" class="form-control" name="subtitle">
+    </div>
+    <div class="form-group">
+        <label for="subtitle">[ภาษาไทย] Post subtitle</label>
+        <input type="text" class="form-control" name="subtitle_thai">
+    </div>
     <div class="form-group">
         <label for="post_category">Post Category</label>
         <select class="form-control" name="post_category" id="post_category">

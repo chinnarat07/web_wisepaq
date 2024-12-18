@@ -6,9 +6,10 @@ include "includes_backend/navigation.php";
 $error_message = "";
 if (isset($_POST["submit"])) {
     $cat_title = $_POST['cat_title'];
-    $cat_title_thai = $_POST['cat_title_thai'];  
+    $cat_title_thai = $_POST['cat_title_thai']; 
+    $cat_page = $_POST['cat_page']; 
     if (!empty($cat_title) || $cat_title != "") {
-        $query = "INSERT INTO tbl_categories (cat_title,cat_title_thai) VALUES('$cat_title','$cat_title_thai'); ";
+        $query = "INSERT INTO tbl_categories (cat_title,cat_title_thai,cat_page) VALUES('$cat_title','$cat_title_thai','$cat_page '); ";
         $create_query = mysqli_query($connection, $query);
         if (!$create_query) {
             die("Query Failed: " . mysqli_error($connection));

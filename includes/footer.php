@@ -3,16 +3,16 @@
      <div class="container-fluid bg-dark text-light footer mt-5  wow fadeIn "  data-wow-delay="0.1s">
          <div class="container py-5">
              <div class="row g-5 ">
-                 <div class="col-lg-3 col-md-6 ">
-                     <h1 class="text-light mb-4 "><?php echo constant('page_footer_1') ?></h1>
+                 <div class="col-lg-3 col-md-6 ps-5 ms-4" style="width: 27%;">
+                     <h2 class="text-light mb-4 "><?php echo constant('page_footer_1') ?></h2>
                      <p class="mb-2 "><i class="fa fa-map-marker-alt me-3"></i><?php echo constant('page_footer_12') ?></p>
                      <p class="mb-2 "><i class="fa fa-phone-alt me-3"></i><?php echo constant('page_footer_13') ?></p>
                      <p class="mb-2 "><i class="fa fa-fax me-3"></i><?php echo constant('page_footer_14') ?></p>
                      <p class="mb-2 "><i class="fa fa-envelope me-3"></i><?php echo constant('page_footer_15') ?></p>
                      <p class="mb-2 "><i class="fab fa-line me-3"></i><?php echo constant('page_footer_16') ?></p>
                  </div>
-                 <div class="col-lg-3 col-md-6 ">
-                     <h1 class="text-light mb-4"><?php echo constant('page_footer_2') ?></h1>
+                 <div class="col-lg-3 col-md-6" style="width: 20%;">
+                     <h2 class="text-light mb-4"><?php echo constant('page_footer_2') ?></h2>
                      <?php $query = "SELECT * FROM tbl_services_small";
                         $ser_small = mysqli_query($connection, $query);
                         if (mysqli_num_rows($fetch_data) == 0) {
@@ -31,13 +31,13 @@
                      <?php }
                         } ?>
                  </div>
-                 <div class="col-lg-3 col-md-6 ">
-                     <h1 class="text-light mb-4"><?php echo constant('page_footer_3') ?></h1>
+                 <div class="col-lg-3 col-md-6 " style="width: 23%;">
+                     <h2 class="text-light mb-4" ><?php echo constant('page_footer_3') ?></h2>
                      <a class="btn btn-link " href=""><?php echo constant('page_footer_31') ?></a>
                      <a class="btn btn-link " href=""><?php echo constant('page_footer_32') ?></a>
                      <a class="btn btn-link " href=""><?php echo constant('page_footer_33') ?></a>
 
-                     <h1 class="text-light mb-3 mt-4"><?php echo constant('page_footer_4') ?></h1>
+                     <h2 class="text-light mb-3 mt-4"><?php echo constant('page_footer_4') ?></h2>
                      <div class="d-flex pt-2">
                          <a class="btn btn-outline-light btn-social " href="https://twitter.com/Wisepaq" target="_parent"><i
                                  class="fab fa-twitter "></i></a>
@@ -47,14 +47,13 @@
                          <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/peraphol/" target="_blank"><i class="fab fa-instagram"></i></a>
                      </div>
                  </div>
-                 <div class="col-lg-3 col-md-6 ">
-                     <h1 class="text-light mb-4"><?php echo constant('page_footer_5') ?></h1>
-                     
-                             <div class="position-relative h-100">
-                                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15504.243776250698!2d100.5580155!3d13.7147587!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a1e14e5f1c45%3A0x96187e02d34a4e78!2sWisepaq%20Business%20Solutions%20Provider%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1733478257715!5m2!1sth!2sth" 
-                                    width="350" height="250" style="border:0;"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                             </div>
-
+                 <div class="col-lg-3 col-md-6 " >
+                     <h2 class="text-light mb-4"><?php echo constant('page_footer_5') ?></h2>
+                     <p class="mb-1"><?php echo constant('page_footer_51') ?></p>
+                    <h6 class="text-primary"><?php echo constant('page_footer_52') ?></h6>
+                    <p class="mb-1"><?php echo constant('page_footer_53') ?></p>
+                    <h6 class="text-primary"><?php echo constant('page_footer_54') ?></h6>
+                 
                  </div>
              </div>
          </div>

@@ -142,7 +142,7 @@
                         <div class="col-md-6 col-lg-4 wow fadeInUp d-flex" data-wow-delay="<?php echo $count <= 0.5 ? $count . "s" : $count = 0.3 . "s" ?>">
                             <div class="service-item p-4 flex-grow-1 d-flex flex-column position-relative">
                                 <div class="overflow-hidden mb-4">
-                                <img class="img-fluid" src="<?php echo "admin/images/" . $the_post_image; ?>"  alt="">
+                                <img class="img-fluid w-100" style="height: 300px; object-fit: cover;" src="<?php echo "admin/images/" . $the_post_image; ?>"  alt="" >
                                 </div>
                                 <h4 class=" text-center"><?php echo $the_post_service_title; ?></h4>
                                 <span class="text-start pb-5 " style="text-indent: 2.5em;"><?php echo $the_post_description; ?></span>
@@ -460,7 +460,7 @@
                         <div class="col-lg-2 col-md-6 wow fadeInUp" id="image-container" style="display: flex; gap: 10px;" data-wow-delay="0.3s">
                             <div class="team-item">
                                 <div class="overflow-hidden position-relative">
-                                    <img class="img-fluid p-3" src="<?php echo $imageURL; ?>" alt="" >
+                                    <img class="img-fluid p-3"  src="<?php echo $imageURL; ?>" alt="" >
                                 </div>
                             </div>
                         </div>

@@ -121,6 +121,11 @@ if (isset($_GET['p_id'])) {
                 <textarea id="editor" name="post_content" class="form-control">
                     <?php echo $post_content; ?>
                 </textarea>
+                <script>
+            CKEDITOR.replace('editor');
+            CKEDITOR.config.width = "100%";
+            CKEDITOR.config.height = "700px"
+        </script>
             </div>
 
               <div class="form-group">
@@ -128,6 +133,11 @@ if (isset($_GET['p_id'])) {
                 <textarea id="editor2" name="post_content_thai" class="form-control">
                     <?php echo $post_content_thai; ?>
                 </textarea>
+                <script>
+            CKEDITOR.replace('editor2');
+            CKEDITOR.config.width = "100%";
+            CKEDITOR.config.height = "700px"
+        </script>
             </div>          
             
             <div class="form-group">

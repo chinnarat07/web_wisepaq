@@ -36,7 +36,11 @@ define('page_footer_31','About Us');
 define('page_footer_32','Our Services');
 define('page_footer_33','Contact Us');
 define('page_footer_4','Follow us');
-define('page_footer_5','Location');
+define('page_footer_5','Business Hours');
+define('page_footer_51','Monday - Friday');
+define('page_footer_52','08:30 am - 05:00 pm');
+define('page_footer_53','Satruday - Sunday');
+define('page_footer_54','Closed'); 
 define('page_footer_0','&copy; 2022 Wisepaq, All Right Reserved.');
 
 //index.php

@@ -37,7 +37,11 @@ define('page_footer_31','เกี่ยวกับเรา');
 define('page_footer_32','บริการของเรา');
 define('page_footer_33','ติดต่อเรา');
 define('page_footer_4','ติดตามเรา');
-define('page_footer_5','ที่อยู่');
+define('page_footer_5','เวลาทำการ');
+define('page_footer_51','จันทร์ - ศุกร์');
+define('page_footer_52','8:30 - 17:00 น.'); 
+define('page_footer_53','เสาร์ - อาทิตย์');
+define('page_footer_54','หยุดทำการ'); 
 define('page_footer_0','สงวนลิขสิทธิ์  &copy; 2022 Wisepaq');
 
 //index.php
