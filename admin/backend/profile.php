@@ -1,6 +1,6 @@
 <?php
-include "includes/header.php";
-include "includes/navigation.php";
+include "../backend/includes_backend/header.php";
+include "../backend/includes_backend/navigation.php";
 
 if (isset($_POST['update_profile'], $_SESSION['username'])) {
     $the_user_name = $_SESSION['username'];
@@ -20,7 +20,7 @@ if (isset($_POST['update_profile'], $_SESSION['username'])) {
     
     
     // Update a User.
-    $query = "UPDATE users SET ";
+    $query = "UPDATE tbl_users SET ";
     $query .= "user_firstname='$user_firstname', ";
     $query .= "user_lastname='$user_lastname', ";
     $query .= "user_name='$user_username', ";
@@ -32,7 +32,7 @@ if (isset($_POST['update_profile'], $_SESSION['username'])) {
     if (!$update_user_query) {
         die("Query Failed: " . mysqli_error($connection));
     }
-    header("Location: ../admin/index.php");
+    header("Location: ../backend/index.php");
 }
 
 ?>
@@ -52,7 +52,7 @@ if (isset($_POST['update_profile'], $_SESSION['username'])) {
                 if (isset($_SESSION['username'])) {
 
                     $the_user_name = $_SESSION['username'];
-                    $query = "SELECT * FROM users WHERE user_name='$the_user_name'";
+                    $query = "SELECT * FROM tbl_users WHERE user_name='$the_user_name'";
                     $fetch_data = mysqli_query($connection, $query);
                     while ($Row = mysqli_fetch_assoc($fetch_data)) {
                         $user_id = $Row['user_id'];
@@ -104,4 +104,4 @@ if (isset($_POST['update_profile'], $_SESSION['username'])) {
     </div>
 </div>
 
-<?php include "includes/footer.php" ?>
+<?php include "../backend/includes_backend/footer.php"; ?>

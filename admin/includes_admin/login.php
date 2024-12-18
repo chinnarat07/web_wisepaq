@@ -18,8 +18,8 @@ if (isset($_POST['login'])) {
      //exit;
 
     if (empty($username) || empty($password)) {
-             echo "<script>alert('Not found user!');</script>";
-             //=    header("Location: ../index.php");
+             echo "<script>alert('Not found user!');window.history.go(-1);</script>";
+                // header("Location: ../index.php");
     } else {
 
             while ($Row = mysqli_fetch_array($select_user_query)) {
@@ -37,7 +37,8 @@ if (isset($_POST['login'])) {
                         $_SESSION['lastname'] = $user_lastname;
                         header("Location: ../backend/index.php");
                 }else{
-                         echo "<script>alert('User Or Password not correct!!');window.history.go(-1);</script>";           
+                         echo "<script>alert('User Or Password not correct!!');window.history.go(-1);</script>"; 
+                                  
                 }
      }
 }

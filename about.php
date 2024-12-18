@@ -1,15 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
-<body>
-<?php
-include "includes/db.php";
-/* Page Header and navigation */
-//=include "includes/header.php";
-//=include "includes/navigation.php";
-?>
 <?php include("./includes/header.php");?>
-
         <!-- Page Header Start -->
         <div class="container-fluid page-header py-5 mb-5">
         <div class="container py-5">
@@ -61,16 +53,19 @@ include "includes/db.php";
                     <h1 class="display-5 mb-4"><?php echo $the_post_about_title ?></h1>
                     <p class="mb-4"><?php echo $the_post_subtitle ?></p>
                     <div class="d-flex align-items-center mb-4">
-                        <div class="flex-shrink-0 bg-primary p-4">
+                        <div class="flex-shrink-0 bg-primary p-3 pb-2">
                             <?php 
                             $currentYear = (new DateTime())->format("Y");
                             $Years_of_Experience = ($currentYear+543) - 2552;
                             if ($_SESSION['lang'] == 'en') {
-                                echo "<h1 class='display-3 text-white '>".$Years_of_Experience."</h1>" ;
+                                echo "<h1 class='display-3 text-white' data-toggle='counter-up'>".$Years_of_Experience."</h1>" ;
                                 echo "<h5 class='text-white '>".constant('page_about_5')."</h5>";
                             } else{
                                 echo "<h5 class='text-white text-center'>".constant('page_about_5')."</h5>";
-                                echo "<h2 class='display-5 text-white text-center'>".$Years_of_Experience."ปี"."</h2>";
+                                echo "<div class='text-center'>";
+                                echo "<span class='display-4 text-white text-center' data-toggle='counter-up'>".$Years_of_Experience."</span>";
+                                echo "<span class='display-6 text-white text-center'>"."ปี"."</span>";
+                                echo "</div>";
                             }
                             ?>
                         </div>
@@ -119,30 +114,30 @@ include "includes/db.php";
         <div class="row g-5">
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
                 <div class="text-center border p-5  bg-primary">
-                    <i class="fa fa-certificate fa-3x text-white mb-3"></i>
-                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">25</h1>
-                    <span class="fs-5 fw-semi-bold text-white">Years Experience</span>
+                    <i class="fa fa-certificate fa-3x  mb-3"></i>
+                    <h1 class="display-2 text-dark mb-0" data-toggle="counter-up">15</h1>
+                    <span class="fs-5 fw-semi-bold text-dark">Years Experience</span>
                 </div>
             </div>
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.3s">
                 <div class="text-center border p-5">
-                    <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
-                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">135</h1>
-                    <span class="fs-5 fw-semi-bold text-white">Team Members</span>
+                    <i class="fa fa-users-cog fa-3x  mb-3"></i>
+                    <h1 class="display-2 text-dark mb-0" data-toggle="counter-up">135</h1>
+                    <span class="fs-5 fw-semi-bold text-dark">Team Members</span>
                 </div>
             </div>
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.5s">
                 <div class="text-center border bg-primary p-5">
-                    <i class="fa fa-users fa-3x text-white mb-3"></i>
-                    <h1 class="display-2 text-white mb-0" data-toggle="counter-up">957</h1>
-                    <span class="fs-5 fw-semi-bold text-white">Happy Clients</span>
+                    <i class="fa fa-users fa-3x  mb-3"></i>
+                    <h1 class="display-2 text-dark mb-0" data-toggle="counter-up">957</h1>
+                    <span class="fs-5 fw-semi-bold text-dark">Happy Clients</span>
                 </div>
             </div>
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.7s">
                 <div class="text-center border p-5">
                     <i class="fa fa-check-double fa-3x mb-3"></i>
                     <h1 class="display-2 text-dark mb-0" data-toggle="counter-up">1839</h1>
-                    <span class="fs-5 fw-semi-bold text-white">Projects Done</span>
+                    <span class="fs-5 fw-semi-bold text-dark">Projects Done</span>
                 </div>
             </div>
         </div>
@@ -224,23 +219,4 @@ include "includes/db.php";
     </div>
     <!-- Team End -->
 
-
-
-
     <?php include("./includes/footer.php") ?>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
-
-</html>

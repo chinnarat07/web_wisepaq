@@ -80,6 +80,11 @@ if (isset($_POST['create_post'])) {
         <textarea id="editor" name="post_content" class="form-control">
         This is some sample content.
         </textarea>
+        <script>
+            CKEDITOR.replace('editor');
+            CKEDITOR.config.width = "100%";
+            CKEDITOR.config.height = "700px"
+        </script>
     </div>
 
     <div class="form-group">

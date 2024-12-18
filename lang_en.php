@@ -6,6 +6,8 @@ define('web_theme_title','Stellar Theme');
 define('web_theme_message','<p>Just another free, fully responsive site template<br /> edited by <a href="https://github.com/irenteria0617"><strong>@Ismael</strong></a> developed by <a target="_blank" href="https://html5up.net">HTML5 UP</a>.</p>');
 define('address','116/69 SSP Tower 2, 19th Floor, Na Ranong Road, <br> Klongtoey, Klongtoey Bangkok, Thailand 10110');
 define('work_time','Mon - Fri : 08.30 AM - 17.00 PM');
+define('follow','Follow Us :');
+define('call','Call Us :');
 
 //header
 define('page_content_1','WELCOME TO WISEPAQ');

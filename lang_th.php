@@ -7,6 +7,9 @@ define('web_theme_message','<p>Este solo es otra gratuita y responsiva plantilla
 
 define('address','116/69 เอส เอส พี ทาวเวอร์ 2 ชั้น 19 <br>ถนน ณ ระนอง แขวงคลองเตย  เขตคลองเตย กรุงเทพมหานคร 10110');
 define('work_time','จ. - ศ. : 8:30 - 17:00 น.');
+define('follow','ติดตามเราได้ที่ :');
+define('call','โทร :');
+
 
 //header
 define('page_content_1','ยินดีต้อนรับสู่ WISEPAQ');

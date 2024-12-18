@@ -7,14 +7,14 @@ if (isset($_GET['lang'])) {
 }
 include('lang_' . $_SESSION['lang'] . '.php');
 ?>
-<!-- Spinner Start -->
-<!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-    <div class="spinner-grow "  role="status">
-        <img src="img/wisepaq.jpg"  alt="Loading" width="80" height="80"/>
-    </div>
-</div> -->
-<!-- Spinner End -->
-
+<?php
+include "includes/db.php";
+/* Page Header and navigation */
+//=include "includes/header.php";
+//=include "includes/navigation.php";
+?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>WISEPAQ | วางระบบ network | Thailand</title>
@@ -23,7 +23,7 @@ include('lang_' . $_SESSION['lang'] . '.php');
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/wisepaq.jpg" rel="icon">
+    <link href="./img/wisepaq.jpg" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,22 +45,31 @@ include('lang_' . $_SESSION['lang'] . '.php');
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
+<body>
+<!-- Spinner Start -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow "  role="status">
+        <img src="img/wisepaq.jpg"  alt="Loading" width="80" height="80"/>
+    </div>
+</div>
+<!-- Spinner End -->
 
 <!-- Topbar Start -->
 <div class="container-fluid bg-dark px-0">
         <div class="row g-0 d-none d-lg-flex">
             <div class="col-lg-6 ps-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center text-white">
-                    <span>Follow Us:</span>
+                    <span><?php echo constant('follow'); ?></span>
                     <a class="btn btn-link text-light" href="https://www.facebook.com/Wisepaqbusiness/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-link text-light" href="https://twitter.com/Wisepaq" target="_blank"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-link text-light" href="https://www.youtube.com/@Wisepaq-business/videos" target="_blank"><i class="fab fa-youtube"></i></a>
                     <a class="btn btn-link text-light" href="https://www.instagram.com/peraphol/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-link text-light" href="admin/index.php" target="_blank"><i class="fas fa-user-secret"></i></a>
                 </div>
             </div>
             <div class="col-lg-6 text-end">
                 <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
-                    <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
+                    <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i><?php echo constant('call'); ?></span>
                     <span class="fs-5 fw-bold">021 195 300, 081 935 9559, 089 615 5559</span>
                 </div>
             </div>
