@@ -55,7 +55,7 @@ include('lang_' . $_SESSION['lang'] . '.php');
                     <a class="btn btn-link text-light" href="https://www.facebook.com/Wisepaqbusiness/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-link text-light" href="https://twitter.com/Wisepaq" target="_blank"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-link text-light" href="https://www.youtube.com/@Wisepaq-business/videos" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-link text-light" href="https://www.instagram.com/peraphol/" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-6 text-end">

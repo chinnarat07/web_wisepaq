@@ -193,7 +193,36 @@ include "includes/db.php";
         </div>
     </div> -->
     <!-- About End -->
-
+<!-- Our Partners Start -->
+<div class="container-xxl py-5">
+        <div class="container">
+            <div class="section-title text-center">
+                <h6 class="text-secondary text-uppercase"><?php echo constant("page_content_7") ?></h6>
+                <h1 class="mb-5"><?php echo constant("page_content_71") ?></h1>
+            </div>
+            <div class="row g-4">
+                <?php
+                $query_partner = "SELECT * FROM tbl_images";
+                $fetch_data_partners = mysqli_query($connection, $query_partner);
+                if (mysqli_num_rows($fetch_data_partners) == 0) {
+                    //echo "<h1 class='text-center'>No content Found</h1>";
+                } else {
+                    while ($Row_partners = mysqli_fetch_assoc($fetch_data_partners)) {
+                        $imageURL = 'uploads/' . $Row_partners['file_name'];
+                ?>
+                        <div class="col-lg-2 col-md-6 wow fadeInUp" id="image-container" style="display: flex; gap: 10px;" data-wow-delay="0.3s">
+                            <div class="team-item">
+                                <div class="overflow-hidden position-relative">
+                                    <img class="img-fluid p-3" src="<?php echo $imageURL; ?>" alt="" >
+                                </div>
+                            </div>
+                        </div>
+                <?php }
+                } ?>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
 
 
 
