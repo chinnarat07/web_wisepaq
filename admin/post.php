@@ -26,7 +26,7 @@ $errMessage = false;
                    $post_title = $Row['post_title_thai'];
             }
             
-            $post_author = $Row['post_author'];
+           
             $post_date = $Row['post_date'];
             $post_image = $Row['post_image'];
             
@@ -48,7 +48,7 @@ $errMessage = false;
 
                     <!-- Author -->
                     <p class="lead">
-                        by <a href="#"><?php echo $post_author; ?></a>
+                        by </a>
                     </p>
 
                     <hr>

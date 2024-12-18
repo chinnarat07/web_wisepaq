@@ -1,18 +1,18 @@
 <?php
 if (isset($_POST['create_post'])) {
     $post_title = $_POST['title'];
-    $post_title_thai = $_POST['title_thai'];  
+    $post_title_thai = $_POST['title_thai'];
     $post_category_id = $_POST['post_category'];
     $post_status = $_POST['post_status'];
-   
+
     $path = $_FILES['post_image']['name'];
     $ext = pathinfo($path, PATHINFO_EXTENSION);
-    $post_image =strtotime(date("Y-m-d H:i:s")).'.'.$ext;
+    $post_image = strtotime(date("Y-m-d H:i:s")) . '.' . $ext;
     $post_image_temp = $_FILES['post_image']['tmp_name'];
 
-    $post_content = $_POST['post_content'];
-    $post_content_thai = $_POST['post_content_thai'];   
-    $post_date =date("Y-m-d H:i:s");  // date('d-m-y');
+    $post_content = base64_encode($_POST['post_content']);
+    $post_content_thai = base64_encode($_POST['post_content_thai']);
+    $post_date = date("Y-m-d H:i:s");  // date('d-m-y');
     $post_comemnt_id = 0;
 
     move_uploaded_file($post_image_temp, "../images/$post_image");
@@ -27,7 +27,7 @@ if (isset($_POST['create_post'])) {
     }
 
     header("Location: posts.php");
-   // echo "<p class='alert alert-success'>Post added successfully. <a href='../post.php?p_id=$the_post_id'>View Post</a></p>";
+    // echo "<p class='alert alert-success'>Post added successfully. <a href='../post.php?p_id=$the_post_id'>View Post</a></p>";
 }
 
 ?>
@@ -52,7 +52,7 @@ if (isset($_POST['create_post'])) {
                 $cat_id = $Row["cat_id"];
                 $cat_title = $Row["cat_title"];
                 if (isset($cat_title)) {
-                    ?>
+            ?>
                     <option value='<?php echo $cat_id; ?>'><?php echo $cat_title; ?></option>
             <?php
                 }
@@ -82,13 +82,18 @@ if (isset($_POST['create_post'])) {
         </textarea>
     </div>
 
-     <div class="form-group">
+    <div class="form-group">
         <label id="my-ckeditor" for="post_content_thai">[ภาษาไทย] Post Content</label>
         <textarea id="editor2" name="post_content_thai" class="form-control">
          นี่คือเนื้อหาตัวอย่างบางส่วน.
         </textarea>
+        <script>
+            CKEDITOR.replace('editor2');
+            CKEDITOR.config.width = "100%";
+            CKEDITOR.config.height = "700px"
+        </script>
     </div>
-    
+
     <div class="form-group">
         <input type="submit" class="btn btn-primary" name="create_post" value="Publish">
     </div>
