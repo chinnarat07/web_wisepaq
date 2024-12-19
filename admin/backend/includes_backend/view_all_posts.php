@@ -18,7 +18,7 @@ if (isset($_POST["apply"])) {
             $bulk_option = $_POST['bulk_option'];
             switch ($bulk_option) {
                 case 'Published':
-                    $query = "UPDATE tbl_posts SET tbl_post_status='$bulk_option' WHERE post_id=$checkBoxValue";
+                    $query = "UPDATE tbl_posts SET post_status = '$bulk_option' WHERE post_id=$checkBoxValue";
                     $update_post = mysqli_query($connection, $query);
                     echo "<p class='alert alert-success'>Post published successfully.</p>";
                     if (!$update_post) {
@@ -26,7 +26,7 @@ if (isset($_POST["apply"])) {
                     }
                     break;
                 case 'Draft':
-                    $query = "UPDATE tbl_posts SET post_status='$bulk_option' WHERE post_id=$checkBoxValue";
+                    $query = "UPDATE tbl_posts SET post_status = '$bulk_option' WHERE post_id=$checkBoxValue";
                     $update_post = mysqli_query($connection, $query);
                     echo "<p class='alert alert-success'>Post draftted successfully.</p>";
                     if (!$update_post) {
@@ -34,7 +34,7 @@ if (isset($_POST["apply"])) {
                     }
                     break;
                 case 'Delete':
-                    $query = "DELETE FROM tbl_posts WHERE post_id=$checkBoxValue";
+                    $query = "DELETE FROM tbl_posts WHERE post_id = $checkBoxValue";
                     $update_post = mysqli_query($connection, $query);
                     echo "<p class='alert alert-success'>Post deleted successfully.</p>";
                     if (!$update_post) {

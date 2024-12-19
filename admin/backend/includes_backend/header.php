@@ -22,7 +22,10 @@ if (!isset($_SESSION['username'])) {
   </script>
 
 
-  <title>WISEPAQ</title>
+<title>WISEPAQ | วางระบบ network | Thailand</title>
+
+<!-- Favicon -->
+<link href="../../img/wisepaq.jpg" rel="icon">
 
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">

@@ -698,6 +698,29 @@
     background: var(--dark);
 }
 
+.about-start,
+.about-end {
+    background:url(../img/about-bg.jpg) center center no-repeat;
+    background-size: cover;
+    
+   
+   
+}
+
+@media (min-width: 992px) {
+    .about-start {
+        position: relative;
+        margin-right: -90px;
+        z-index: 1;
+    }
+
+    .about-end {
+        position: relative;
+        margin-left: -90px;
+        z-index: 1;
+    }
+}
+
 
 
 

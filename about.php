@@ -48,8 +48,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <p class="fw-medium text-dark mb-2"><?php echo constant('page_about_4') ?></p>
+                <div class="col-lg-6 wow fadeIn pe-0" data-wow-delay="0.5s">
+                    <p class="fw-medium text-secontery mb-2"><?php echo constant('page_about_4') ?></p>
                     <h1 class="display-5 mb-4"><?php echo $the_post_about_title ?></h1>
                     <p class="mb-4"><?php echo $the_post_subtitle ?></p>
                     <div class="d-flex align-items-center mb-4">

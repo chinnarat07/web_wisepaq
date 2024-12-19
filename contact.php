@@ -19,7 +19,7 @@
      <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
-                <h4 class="section-title"><?php echo constant("page_contact_31") ?></h4>
+                <h5 class="section-title text-secondary"><?php echo constant("page_contact_31") ?></h5>
                 <h1 class="display-6 mb-4"><?php echo constant("page_contact_4") ?></h1>
             </div>
             <div class="row g-5">
