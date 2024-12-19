@@ -130,12 +130,15 @@
                 } else {
                     while ($Row = mysqli_fetch_assoc($fetch_post_service)) {
                         $count = 0.3;
+                        $the_post_id =  $Row['post_id'];
                         $the_post_image =  $Row['post_image'];
                         if ($_SESSION['lang'] == 'en') {
                             $the_post_service_title = $Row['post_title'];
+                            $the_post_service_subtitle = $Row['post_subtitle'];
                             $the_post_description = base64_decode($Row['post_content']);
                         } else {
                             $the_post_service_title = $Row['post_title_thai'];
+                            $the_post_service_subtitle = $Row['post_subtitle_thai'];
                             $the_post_description = base64_decode($Row['post_content_thai']);
                         }
                 ?>
@@ -146,7 +149,7 @@
                                 </div>
                                 <h4 class=" text-center"><?php echo $the_post_service_title; ?></h4>
                                 <span class="text-start pb-5 " style="text-indent: 2.5em;"><?php echo $the_post_description; ?></span>
-                                <a class="btn-slide mt-2 position-absolute" style="bottom: 10px; left: 10px;" href="#">
+                                <a class="btn-slide mt-2 position-absolute" style="bottom: 10px; left: 10px;" href="service.php#<?php echo $the_post_service_subtitle;?>">
                                     <i class="fa fa-arrow-right"></i>
                                     <span><?php echo constant("page_content_6"); ?></span>
                                 </a>

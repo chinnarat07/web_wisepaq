@@ -30,6 +30,7 @@
                 } else {
                     $index = 1;
                     while ($Row_service = mysqli_fetch_assoc($fetch_post_service)) {
+                        $the_post_id = $Row_service['post_id'];
                         $the_post_image =  $Row_service['post_image'];
                         if ($_SESSION['lang'] == 'en') {
                             $the_post_service_title = $Row_service['post_title'];
@@ -42,12 +43,12 @@
                         }
                 ?>
                         <?php if ($index % 2 != 0) { ?>
-                            <div class="row gx-0 mb-3 mb-lg-0">
+                            <div class="row gx-0 mb-3 mb-lg-0" data-name="<?php echo $the_post_subtitle; ?>">
                                 <div class="col-lg-6 my-lg-5 py-lg-5">
                                     <div class="about-start p-5">
                                         <h5 class="section-title text-secondary ms-4 "><?php echo $the_post_service_title; ?></h5>
-                                        <h1 class="display-5 mb-4 " ><?php echo $the_post_subtitle; ?></h1>
-                                        <p ><?php echo $the_post_content; ?></p>
+                                        <h1 class="display-5 mb-4 "><?php echo $the_post_subtitle; ?></h1>
+                                        <p><?php echo $the_post_content; ?></p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6" style="min-height: 400px;">
@@ -57,7 +58,7 @@
                                 </div>
                             </div>
                         <?php } else { ?>
-                            <div class="row gx-0">
+                            <div class="row gx-0" data-name="<?php echo $the_post_subtitle; ?>">
                                 <div class="col-lg-6" style="min-height: 400px;">
                                     <div class="position-relative h-100">
                                         <img class="position-absolute w-100 h-100" src="<?php echo "admin/images/" . $the_post_image; ?>" style="object-fit: cover;">
@@ -67,7 +68,7 @@
                                     <div class="about-end bg-primary p-5">
                                         <h5 class="section-title text-secondary ms-4 "><?php echo $the_post_service_title; ?></h5>
                                         <h1 class="display-5 mb-4 "><?php echo $the_post_subtitle; ?></h1>
-                                        <p ><?php echo $the_post_content; ?></p>
+                                        <p><?php echo $the_post_content; ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -79,6 +80,21 @@
         </div>
     </div>
 </div>
+<script>
+    // JavaScript: เลื่อนหน้าไปยังตำแหน่งตามฟิลด์ใน URL
+    document.addEventListener("DOMContentLoaded", function () {
+        // ดึงค่า hash และถอดรหัสภาษาไทย
+        const hash = decodeURIComponent(window.location.hash.substring(1)); // ตัด # ออกและ decode
+
+        if (hash) {
+            // ค้นหา element ที่มี data-name ตรงกับ hash
+            const target = document.querySelector(`[data-name="${hash}"]`);
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth" }); // เลื่อนไปที่เนื้อหา
+            }
+        }
+    });
+</script>
 <!-- Service End -->
 
 <?php include("./includes/footer.php") ?>

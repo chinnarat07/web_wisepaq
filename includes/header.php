@@ -47,11 +47,11 @@ include "includes/db.php";
 </head>
 <body>
 <!-- Spinner Start -->
-<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+<!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-grow "  role="status">
         <img src="img/wisepaq.jpg"  alt="Loading" width="80" height="80"/>
     </div>
-</div>
+</div> -->
 <!-- Spinner End -->
 
 <!-- Topbar Start -->

@@ -1,3 +1,4 @@
+<script src="./ckeditor/ckeditor.js"></script>
 <?php
 if (isset($_POST['create_post'])) {
     $post_title = $_POST['title'];
@@ -90,9 +91,13 @@ if (isset($_POST['create_post'])) {
         This is some sample content.
         </textarea>
         <script>
+            CKEDITOR.dtd.$removeEmpty['i'] = false;
+            CKEDITOR.dtd.$removeEmpty['span'] = false;
+
             CKEDITOR.replace('editor');
+
             CKEDITOR.config.width = "100%";
-            CKEDITOR.config.height = "700px"
+            CKEDITOR.config.height = "700px";
         </script>
     </div>
 
@@ -102,9 +107,13 @@ if (isset($_POST['create_post'])) {
          นี่คือเนื้อหาตัวอย่างบางส่วน.
         </textarea>
         <script>
+            CKEDITOR.dtd.$removeEmpty['i'] = false;
+            CKEDITOR.dtd.$removeEmpty['span'] = false;
+
             CKEDITOR.replace('editor2');
+
             CKEDITOR.config.width = "100%";
-            CKEDITOR.config.height = "700px"
+            CKEDITOR.config.height = "700px";
         </script>
     </div>
 

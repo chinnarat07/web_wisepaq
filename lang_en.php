@@ -104,16 +104,18 @@ define('page_mission_5','And can provide advice on transportation services and c
 
 
 //service.php
-define('page_service_1','Our Services');
-define('page_service_2','Best Logistic Services');
-define('page_service_3','Explore a comprehensive range of technology services at Wisepaq, where we go above and beyond to meet and exceed your technology requirements. Our team works closely with you to develop customized plans that seamlessly integrate with your operations, ensuring long-term effectiveness and sustainability. Get in touch with us today to discover how we can elevate your technology infrastructure.');
-define('page_service_4','Services for importing and exporting products domestically and abroad. Services include direct flights and connecting flights to destinations around the world.');
-define('page_service_5','Ocean Freight');
-define('page_service_6','Providing transportation services for both Full Container Load (FCL) and Less than Container Load (LCL), covering ports on all continents.');
-define('page_service_7','Land Transport');
-define('page_service_8','Cross-border trucking service (Cross Border Service) to countries in Indochina, including Burma and Laos.');
-define('page_service_9','Cargo Storage');
-define('page_service_10','Complete warehouse management service with WMS system, controlling product picking and distribution.');
+define('page_service_1','Service');
+define('page_service_2','HOME');
+define('page_service_3','SERVICE');
+define('page_service_31','Service');
+define('page_service_4','Explore a comprehensive range of technology services at Wisepaq, where we go above and beyond to meet and exceed your technology requirements. Our team works closely with you to develop customized plans that seamlessly integrate with your operations, ensuring long-term effectiveness and sustainability. Get in touch with us today to discover how we can elevate your technology infrastructure.');
+define('page_service_5','Services for importing and exporting products domestically and abroad. Services include direct flights and connecting flights to destinations around the world.');
+define('page_service_6','Ocean Freight');
+define('page_service_7','Providing transportation services for both Full Container Load (FCL) and Less than Container Load (LCL), covering ports on all continents.');
+define('page_service_8','Land Transport');
+define('page_service_9','Cross-border trucking service (Cross Border Service) to countries in Indochina, including Burma and Laos.');
+define('page_service_10','Cargo Storage');
+define('page_service_11','Complete warehouse management service with WMS system, controlling product picking and distribution.');
 
 //contact.php
 define('page_contact_1','Contact Us');

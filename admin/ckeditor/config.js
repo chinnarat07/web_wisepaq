@@ -7,4 +7,8 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
+	config.contentsCss = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';   
+            config.removePlugins= 'save';
+            config.extraPlugins = 'ckeditorfa';
+            config.allowedContent = true;
 };
