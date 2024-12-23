@@ -7,7 +7,6 @@ include "includes_admin/navigation.php";
 
 $errMessage = false;
 
-
 ?>
 <!-- Page Content -->
 <div class="container">
@@ -28,7 +27,7 @@ $errMessage = false;
                    $post_subtitle = $Row['post_subtitle_thai'];
             }
             
-           
+            $post_link_url = $Row['post_link'];
             $post_date = $Row['post_date'];
             $post_image = $Row['post_image'];
             
@@ -55,7 +54,9 @@ $errMessage = false;
                     <p class="lead">
                         by </a>
                     </p>
-
+                    <!--Link Url-->
+                    <a class="btn btn-link text-light" href="<?php echo $post_link_url ?>" target="_blank">click link</i></a>
+                    
                     <hr>
 
                     <!-- Date/Time -->

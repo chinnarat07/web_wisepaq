@@ -1,0 +1,15 @@
+{
+    "name": "chinnaratbutjang/web_wisepaq",
+    "autoload": {
+        "psr-4": {
+            "Chinnaratbutjang\\WebWisepaq\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "chinnarat07",
+            "email": "bu.chinnarat@gmail.com"
+        }
+    ],
+    "require": {}
+}

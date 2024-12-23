@@ -41,6 +41,10 @@ define('page_footer_51','Monday - Friday');
 define('page_footer_52','08:30 am - 05:00 pm');
 define('page_footer_53','Satruday - Sunday');
 define('page_footer_54','Closed'); 
+define('page_footer_6','Business Hours Status');
+define('page_footer_61','Opening Hours');
+define('page_footer_62','Close To Closing Time');
+define('page_footer_63','Closed');
 define('page_footer_0','&copy; 2022 Wisepaq, All Right Reserved.');
 
 //index.php
@@ -108,7 +112,7 @@ define('page_service_1','Service');
 define('page_service_2','HOME');
 define('page_service_3','SERVICE');
 define('page_service_31','Service');
-define('page_service_4','Explore a comprehensive range of technology services at Wisepaq, where we go above and beyond to meet and exceed your technology requirements. Our team works closely with you to develop customized plans that seamlessly integrate with your operations, ensuring long-term effectiveness and sustainability. Get in touch with us today to discover how we can elevate your technology infrastructure.');
+define('page_service_4','Explore a comprehensive range of technology services at Wisepaq');
 define('page_service_5','Services for importing and exporting products domestically and abroad. Services include direct flights and connecting flights to destinations around the world.');
 define('page_service_6','Ocean Freight');
 define('page_service_7','Providing transportation services for both Full Container Load (FCL) and Less than Container Load (LCL), covering ports on all continents.');
@@ -116,6 +120,22 @@ define('page_service_8','Land Transport');
 define('page_service_9','Cross-border trucking service (Cross Border Service) to countries in Indochina, including Burma and Laos.');
 define('page_service_10','Cargo Storage');
 define('page_service_11','Complete warehouse management service with WMS system, controlling product picking and distribution.');
+
+//Project.php 
+define('page_project_1','Project');
+define('page_project_2','HOME');
+define('page_project_3','PEOJECT');
+define('page_project_31','Project');
+define('page_project_4','Some project samples of Wisepaq do.');
+
+
+//Solution.php
+define('page_solution_1','Solution');
+define('page_solution_2','HOME');
+define('page_solution_3','SOLUTION');
+define('page_solution_31','Solution');
+define('page_solution_4','Intelligent IT Solutions');
+define('page_solution_5','Read More');
 
 //contact.php
 define('page_contact_1','Contact Us');

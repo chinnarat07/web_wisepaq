@@ -4,11 +4,11 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 mb-5">
         <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown"><?php echo constant('page_contact_1') ?></h1>
+            <h1 class="display-4 text-white mb-3 animated slideInDown"><?php echo constant('page_contact_1') ?></h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.php"><?php echo constant('page_contact_2') ?></a></li>
-                    <li class="breadcrumb-item text-dark active" aria-current="page"><?php echo constant('page_contact_3') ?></li>
+                    <li class="breadcrumb-item fs-5"><a class="text-white" href="index.php"><?php echo constant('page_contact_2') ?></a></li>
+                    <li class="breadcrumb-item fs-5 text-warning active" text-warnin" aria-current="page"><?php echo constant('page_contact_3') ?></li>
                 </ol>
             </nav>
         </div>
@@ -18,7 +18,7 @@
      <!-- Contact Start -->
      <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 820px;">
                 <h5 class="section-title text-secondary"><?php echo constant("page_contact_31") ?></h5>
                 <h1 class="display-6 mb-4"><?php echo constant("page_contact_4") ?></h1>
             </div>

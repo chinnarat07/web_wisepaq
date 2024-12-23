@@ -15,6 +15,14 @@
     // Initiate the wowjs
     new WOW().init();
 
+    const glightbox = GLightbox({
+        selector: '.glightbox'
+      });
+     
+    $(".project").click(function(){
+        $(".content_project").slideToggle("fast");
+      }
+    )  ;
 
     // Sticky Navbar
     $(window).scroll(function () {
@@ -50,7 +58,6 @@
     
     // Header carousel
     $(".header-carousel").owlCarousel({
-        autoplay: true,
         smartSpeed: 1500,
         loop: true,
         nav: false,

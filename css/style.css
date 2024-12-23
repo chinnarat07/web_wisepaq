@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 /********** Template CSS **********/
 :root {
     /* --primary: #AB7442; */
@@ -8,8 +7,13 @@
     /* --dark: #353535; */
     --secondary: #5F656F;
     --dark: #b1ad32;
+    --danger:#f35d00;
 }
-
+*{
+    font-family: "Sarabun", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 .fw-medium {
     font-weight: 500 !important;
 }
@@ -109,11 +113,12 @@
     margin-left: 8px;
 }
 
+
 .navbar-light .navbar-nav .nav-link {
     margin-right: 30px;
     padding: 25px 0;
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
     outline: none;
@@ -244,7 +249,11 @@
     background: linear-gradient(rgba(30, 30, 30, 0.7), rgba(130, 127, 125, 0.2)), url(../img/our_service2.jpg)no-repeat;
     background-size: cover;
 }
-
+.page-header-index {
+    background: linear-gradient(rgba(30, 30, 30, 0.7), rgba(130, 127, 125, 0.2)), url(../img/bg_0.jpg)no-repeat;
+    background-size: cover;
+    height: 15cm;
+}
 .breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
@@ -720,7 +729,15 @@
         z-index: 1;
     }
 }
-
+preview-link{
+    position: absolute;
+    left: calc(50% - 40px);
+    font-size: 26px;
+    top: calc(50% - 14px);
+    color: #fff;
+    transition: 0.3s;
+    line-height: 1.2;
+}
 
 
 

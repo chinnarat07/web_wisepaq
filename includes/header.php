@@ -9,12 +9,14 @@ include('lang_' . $_SESSION['lang'] . '.php');
 ?>
 <?php
 include "includes/db.php";
+require 'vendor/autoload.php';
 /* Page Header and navigation */
 //=include "includes/header.php";
 //=include "includes/navigation.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>WISEPAQ | วางระบบ network | Thailand</title>
@@ -28,7 +30,7 @@ include "includes/db.php";
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -42,20 +44,29 @@ include "includes/db.php";
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- glightbox -->
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<!-- Spinner Start -->
-<!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <!-- Spinner Start -->
+    <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-grow "  role="status">
         <img src="img/wisepaq.jpg"  alt="Loading" width="80" height="80"/>
     </div>
 </div> -->
-<!-- Spinner End -->
+    <!-- Spinner End -->
 
-<!-- Topbar Start -->
-<div class="container-fluid bg-dark px-0">
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-0">
         <div class="row g-0 d-none d-lg-flex">
             <div class="col-lg-6 ps-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center text-white">
@@ -77,8 +88,8 @@ include "includes/db.php";
     </div>
     <!-- Topbar End -->
 
-<!-- Topbar Start -->
-<!-- <div class="container-fluid bg-light p-0">
+    <!-- Topbar Start -->
+    <!-- <div class="container-fluid bg-light p-0">
     <div class="row gx-0 d-none d-lg-flex">
         <div class="col-lg-7 px-5 text-start">
             <div class="h-100 d-inline-flex align-items-center py-3 me-4">
@@ -103,81 +114,81 @@ include "includes/db.php";
         </div>
     </div>
 </div> -->
-<!-- Topbar End -->
+    <!-- Topbar End -->
 
-<!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 ">
-    <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-        <h2 class="m-0 "><img src="img/wisepaq.jpg" alt="" width="60" height="60" style="margin-right: 5px;">WISEPAQ</h2>
-    </a>
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse " id="navbarCollapse">
-        <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <?php
-            $query = "SELECT * FROM  tbl_menu";
-            $fetch_data = mysqli_query($connection, $query);
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 ">
+        <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 "><img src="img/wisepaq.jpg" alt="" width="60" height="60" style="margin-right: 5px;">WISEPAQ</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <?php
+                $query = "SELECT * FROM  tbl_menu";
+                $fetch_data = mysqli_query($connection, $query);
 
-            if (mysqli_num_rows($fetch_data) == 0) {
-                //echo "<h1 class='text-center'>No content Found</h1>";
-            } else {
-                while ($Row = mysqli_fetch_assoc($fetch_data)) {
+                if (mysqli_num_rows($fetch_data) == 0) {
+                    //echo "<h1 class='text-center'>No content Found</h1>";
+                } else {
+                    while ($Row = mysqli_fetch_assoc($fetch_data)) {
 
-                    $menu_id = $Row['menu_id'];
-                    if ($_SESSION['lang'] == 'en') {
-                        $menu_title = $Row['menu_name'];
-                    } else {
-                        $menu_title = $Row['menu_name_thai'];
-                    }
-                    $link = $Row['link_name'];
+                        $menu_id = $Row['menu_id'];
+                        if ($_SESSION['lang'] == 'en') {
+                            $menu_title = $Row['menu_name'];
+                        } else {
+                            $menu_title = $Row['menu_name_thai'];
+                        }
+                        $link = $Row['link_name'];
 
-                    $query_sub = "SELECT * FROM tbl_sub_menu where menu_id = $menu_id";
-                    $fetch_data_sub = mysqli_query($connection, $query_sub);
+                        $query_sub = "SELECT * FROM tbl_sub_menu where menu_id = $menu_id";
+                        $fetch_data_sub = mysqli_query($connection, $query_sub);
 
-                    if (mysqli_num_rows($fetch_data_sub) == 0) {
-                        //echo "<h1 class='text-center'>No content Found</h1>";
-                        ?>
-                        <a href="<?php echo $link; ?>" class="nav-item nav-link  "><?php echo $menu_title; ?></a>
+                        if (mysqli_num_rows($fetch_data_sub) == 0) {
+                            //echo "<h1 class='text-center'>No content Found</h1>";
+                ?>
+                            <a href="<?php echo $link; ?>" class="nav-item nav-link  "><?php echo $menu_title; ?></a>
 
                         <?php
-                    } else {
+                        } else {
                         ?>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><?php echo $menu_title; ?></a>
-                            <div class="dropdown-menu fade-up m-0">
-                                <?php
-                                while ($Row_sub = mysqli_fetch_assoc($fetch_data_sub)) {
-                                    if ($_SESSION['lang'] == 'en') {
-                                        $menu_title_sub = $Row_sub['menu_subname'];
-                                    } else {
-                                        $menu_title_sub = $Row_sub['menu_subname_thai'];
-                                    }
-                                    $link_sub = $Row_sub['link_subname'];
+                            <div class="nav-item dropdown">
+                                <a href="<?php echo $link; ?>" class="nav-link dropdown-toggle active"><?php echo $menu_title; ?></a>
+                                <div class="dropdown-menu fade-up m-0">
+                                    <?php
+                                    while ($Row_sub = mysqli_fetch_assoc($fetch_data_sub)) {
+                                        if ($_SESSION['lang'] == 'en') {
+                                            $menu_title_sub = $Row_sub['menu_subname'];
+                                        } else {
+                                            $menu_title_sub = $Row_sub['menu_subname_thai'];
+                                        }
+                                        $link_sub = $Row_sub['link_subname'];
                                     ?>
-                                    <a href="<?php echo $link_sub; ?>" class="dropdown-item "><?php echo $menu_title_sub ?></a>
-                                <?php } ?>
+                                        <a href="<?php echo $link_sub; ?>" class="dropdown-item "><?php echo $menu_title_sub ?></a>
+                                    <?php } ?>
+                                </div>
                             </div>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
                 <?php }
-            }
-            ?>
-        </div>
-        <div class="btn-group btn-group-toggle me-4 " data-toggle="buttons">
-            <label class="btn btn-primary text-light">
-                <input type="radio" style="appearance: none; " id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="th"> TH
-            </label>
-            <label class="btn btn-primary text-light active ">
-                <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="en"> EN
-            </label>
-        </div>
+                }
+                ?>
+            </div>
+            <div class="btn-group btn-group-toggle me-4 " data-toggle="buttons">
+                <label class="btn btn-primary text-light">
+                    <input type="radio" style="appearance: none; " id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="th"> TH
+                </label>
+                <label class="btn btn-primary text-light active ">
+                    <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="en"> EN
+                </label>
+            </div>
 
-</nav>
-<!-- Scripts -->
-<script>
-    function change_lang(value) {
-        window.location.replace("?lang=" + value);
-    }
-</script>
-<!-- Navbar End -->
+    </nav>
+    <!-- Scripts -->
+    <script>
+        function change_lang(value) {
+            window.location.replace("?lang=" + value);
+        }
+    </script>
+    <!-- Navbar End -->

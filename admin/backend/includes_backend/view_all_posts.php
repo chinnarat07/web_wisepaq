@@ -72,8 +72,8 @@ if (isset($_POST["apply"])) {
                 <tr>
                     <th><input type='checkbox' id='selectAllBoxes' onclick="selectAll(this)"></th>
                     <th>ID</th>
-                    <th>Title</th>
-                    <th>[ภาษาไทย] Title</th>                 
+                    <th style="width: 200px;">Title</th>
+                    <th style="width: 200px;">[ภาษาไทย] Title</th>                 
                     <th>Category</th>
                     <th>[ภาษาไทย] Category</th>                  
                     <th>Status</th>
