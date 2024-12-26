@@ -154,8 +154,8 @@ if (isset($_GET["edit"], $_POST["update_category"])) {
                                     <td>{$Row['cat_title_thai']}</td>
                                     <td>{$Row['cat_page']}</td>     
                                     <td>
-                                         <a onClick=\"javascript: return confirm('Please confirm deletion');\"href='categories.php?delete={$Row['cat_id']}'>Delete</a>
-                                         | <a href='categories.php?edit={$Row['cat_id']}'>Edit</a>
+                                        <a href='categories.php?edit={$Row['cat_id']}'><i class='fa fa-pencil-square-o fa-lg' aria-hidden='true'></i></a> |
+                                        <a onClick=\"javascript: return confirm('Please confirm deletion');\"href='categories.php?delete={$Row['cat_id']}'><i class='fa fa-trash-o fa-lg' aria-hidden='true'></i></a>
                                     </td>
                                 </tr>";
                         }

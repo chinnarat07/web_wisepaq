@@ -12,15 +12,15 @@ if (isset($_GET["delete"])) {
 
 ?>
 
-<table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
-             <th>Action</th>           
+<table class="table table-bordered table-hover text-center">
+    <thead >
+        <tr >
+            <th class="text-center">ID</th>
+            <th class="text-center">Username</th>
+            <th class="text-center">Firstname</th>
+            <th class="text-center">Lastname</th>
+            <th class="text-center">Email</th>
+             <th class="text-center">Action</th>           
         </tr>
     </thead>
     <tbody>
@@ -41,9 +41,9 @@ if (isset($_GET["delete"])) {
                     <td>$user_firstname</td>
                     <td>$user_lastname</td>
                     <td>$user_email</td>
-                    <td>
-                            <a href='users.php?source=edit_user&user_id=$user_id'>Edit</a> |
-                            <a onClick=\"javascript: return confirm('Are you sure you want to delete'); \" href='users.php?delete=$user_id'>Delete</a>
+                    <td class='text-center'>
+                            <a href='users.php?source=edit_user&user_id=$user_id'><i class='fa fa-pencil-square-o fa-lg' aria-hidden='true'></i></a> </a> |
+                            <a onClick=\"javascript: return confirm('Are you sure you want to delete'); \" href='users.php?delete=$user_id'><i class='fa fa-trash-o fa-lg' aria-hidden='true'></i></a>
                      </td>
                 </tr>";
         }

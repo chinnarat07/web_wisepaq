@@ -45,14 +45,14 @@
                         <?php if ($index % 2 != 0) { ?>
                             <div class="row gx-0 mb-3 mb-lg-0" data-name="<?php echo $the_post_subtitle; ?>">
                                 <div class="col-lg-6 my-lg-5 py-lg-5">
-                                    <div class="about-start p-5">
-                                        <h5 class="section-title text-secondary ms-4 "><?php echo $the_post_service_title; ?></h5>
-                                        <h1 class="display-5 mb-4 text-dark"><?php echo $the_post_subtitle; ?></h1>
+                                    <div class="about-start p-5 ">
+                                        <h5 class="section-title text-secondary ms-4 animated slideInDown"><?php echo $the_post_service_title; ?></h5>
+                                        <h1 class="display-5 mb-4 text-dark animated slideInDown"><?php echo $the_post_subtitle; ?></h1>
                                         <p><?php echo $the_post_content; ?></p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6" style="min-height: 400px;">
-                                    <div class="position-relative h-100">
+                                    <div class="position-relative h-100 animated slideInUp">
                                         <img class="position-absolute w-100 h-100" src="<?php echo "admin/images/" . $the_post_image; ?>" style="object-fit: cover;">
                                     </div>
                                 </div>
@@ -60,15 +60,15 @@
                         <?php } else { ?>
                             <div class="row gx-0" data-name="<?php echo $the_post_subtitle; ?>">
                                 <div class="col-lg-6" style="min-height: 400px;">
-                                    <div class="position-relative h-100">
+                                    <div class="position-relative h-100 animated slideInUp">
                                         <img class="position-absolute w-100 h-100" src="<?php echo "admin/images/" . $the_post_image; ?>" style="object-fit: cover;">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 my-lg-5 py-lg-5">
-                                    <div class="about-end bg-primary p-5">
-                                        <h5 class="section-title text-secondary ms-4 "><?php echo $the_post_service_title; ?></h5>
-                                        <h1 class="display-5 mb-4 "><?php echo $the_post_subtitle; ?></h1>
-                                        <p><?php echo $the_post_content; ?></p>
+                                    <div class="about-end bg-primary p-5 ">
+                                        <h5 class="section-title text-secondary ms-4 animated slideInDown"><?php echo $the_post_service_title; ?></h5>
+                                        <h1 class="display-5 mb-4 animated slideInDown"><?php echo $the_post_subtitle; ?></h1>
+                                        <p ><?php echo $the_post_content; ?></p>
                                     </div>
                                 </div>
                             </div>

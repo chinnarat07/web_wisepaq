@@ -9,8 +9,8 @@
     --dark: #b1ad32;
     --danger:#f35d00;
 }
-*{
-    font-family: "Sarabun", serif;
+body{
+  font-family:"Sarabunnew" ;
   font-weight: 400;
   font-style: normal;
 }
@@ -85,7 +85,6 @@
     justify-content: center;
     font-weight: normal;
 }
-
 
 .topbar-right {
     position: relative;
@@ -249,10 +248,9 @@
     background: linear-gradient(rgba(30, 30, 30, 0.7), rgba(130, 127, 125, 0.2)), url(../img/our_service2.jpg)no-repeat;
     background-size: cover;
 }
-.page-header-index {
-    background: linear-gradient(rgba(30, 30, 30, 0.7), rgba(130, 127, 125, 0.2)), url(../img/bg_0.jpg)no-repeat;
+.page-img {
+    background: url(../img/feightfarder-Photoroom.png)no-repeat;
     background-size: cover;
-    height: 15cm;
 }
 .breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
@@ -568,8 +566,7 @@
 
 /*** Footer ***/
 .footer {
-    background: linear-gradient(rgba(53, 53, 53, .7), rgba(53, 53, 53, .7)), url(../img/footer.jpg) center center no-repeat;
-    background-size: cover;
+    background: linear-gradient(rgba(53, 53, 53, .7), rgba(53, 53, 53, .7));
 }
 
 .footer .btn.btn-social {
@@ -603,7 +600,7 @@
 .footer .btn.btn-link::before {
     position: relative;
     content: "\f105";
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 5 Free" !important ;
     font-weight: 900;
     margin-right: 10px;
 }
@@ -738,6 +735,7 @@ preview-link{
     transition: 0.3s;
     line-height: 1.2;
 }
+
 
 
 

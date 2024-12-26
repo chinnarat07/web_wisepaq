@@ -36,6 +36,7 @@
                     while ($Row_solution = mysqli_fetch_assoc($fetch_post_solution)) {
                         $the_post_id = $Row_solution['post_id'];
                         $the_post_image =  $Row_solution['post_image'];
+                        $the_post_link_url = $Row_solution['post_link'];
                         if ($_SESSION['lang'] == 'en') {
                             $the_post_solution_title = $Row_solution['post_title'];
                             $the_post_subtitle = $Row_solution['post_subtitle'];
@@ -53,7 +54,7 @@
                                         <h5 class="section-title text-secondary ms-4 "><?php echo $the_post_subtitle; ?></h5>
                                         <h1 class="display-5 mb-4 text-dark"><?php echo $the_post_solution_title; ?></h1>
                                         <p><?php echo $the_post_content; ?></p>
-                                        <a href="" class="btn btn-success rounded-pill py-md-3 px-md-5 mt-1"><?php echo constant('page_solution_5');?></a>
+                                        <a href="<?php echo $the_post_link_url; ?>" class="btn btn-success rounded-pill py-md-3 px-md-5 mt-1"><?php echo constant('page_solution_5');?></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6" style="min-height: 400px;">
@@ -74,7 +75,7 @@
                                         <h5 class="section-title text-secondary ms-4 "><?php echo $the_post_subtitle; ?></h5>
                                         <h1 class="display-5 mb-4 "><?php echo $the_post_solution_title; ?></h1>
                                         <p><?php echo $the_post_content; ?></p>
-                                        <a href="" class="btn btn-success rounded-pill py-md-3 px-md-5 mt-1"><?php echo constant('page_solution_5');?></a>
+                                        <a href="<?php echo $the_post_link_url; ?>" class="btn btn-success rounded-pill py-md-3 px-md-5 mt-1"><?php echo constant('page_solution_5');?></a>
                                     </div>
                                 </div>
                             </div>

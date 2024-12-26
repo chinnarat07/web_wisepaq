@@ -1,6 +1,6 @@
  <!-- Footer Start -->
  <div id="footer">
-     <div class="container-fluid bg-dark text-light footer mt-5  wow fadeIn " data-wow-delay="0.1s">
+     <div class="container-fluid bg-dark text-light footer mt-0 wow fadeIn " data-wow-delay="0.1s">
          <div class="container py-5">
              <div class="row g-5 ">
                  <div class="col-lg-3 col-md-6 ">
@@ -33,9 +33,9 @@
                  </div>
                  <div class="col-lg-3 col-md-6 ">
                      <h2 class="text-light mb-4"><?php echo constant('page_footer_3') ?></h2>
-                     <a class="btn btn-link " href=""><?php echo constant('page_footer_31') ?></a>
-                     <a class="btn btn-link " href=""><?php echo constant('page_footer_32') ?></a>
-                     <a class="btn btn-link " href=""><?php echo constant('page_footer_33') ?></a>
+                     <a class="btn btn-link " href="about.php"><?php echo constant('page_footer_31') ?></a>
+                     <a class="btn btn-link " href="service.php"><?php echo constant('page_footer_32') ?></a>
+                     <a class="btn btn-link " href="contact.php"><?php echo constant('page_footer_33') ?></a>
 
                      <h2 class="text-light mb-3 mt-4"><?php echo constant('page_footer_4') ?></h2>
                      <div class="d-flex pt-2">
@@ -63,16 +63,15 @@
 
                         // เวลาที่กำหนด
                         $openTime = "08:30";
-                        $closeTime = "16:30";
-                        $nearCloseTime = "16:30";
-                        $endTime = "17:00";
+                        $nearCloseTime = "16:00";
+                        $endTime = "17:03";
 
                         // ตรวจสอบเงื่อนไข
                         if ($currentDay >= 1 && $currentDay <= 5) { // วันจันทร์-ศุกร์
-                            if ($currentTime >= $openTime && $currentTime < $closeTime) {
+                            if ($currentTime >= $openTime && $currentTime < $nearCloseTime) {
                                 echo "<p class='mb-1 ms-1'>".constant('page_footer_6')."</p>";
                                 echo "<h3 class='text-success'>".constant('page_footer_61')."</h3>";
-                            } elseif ($crrentTime >= $closeTime && $currentTime < $endTime) {
+                            } elseif ($currentTime >= $nearCloseTime && $currentTime < $endTime) {
                                 echo "<p class='mb-1 ms-1'>".constant('page_footer_6')."</p>";
                                 echo "<h3 class='text-warning'>".constant('page_footer_62')."</h3>";
                             } else {
@@ -98,7 +97,7 @@
 
 
  <!-- Back to Top -->
- <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-3 back-to-top"><i class="bi bi-arrow-up fa-lg"></i></a>
+ <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up fa-lg"></i></a>
 
  <!-- JavaScript Libraries -->
  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

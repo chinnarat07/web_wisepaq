@@ -120,6 +120,22 @@ define('page_solution_31','โซลูชั่น');
 define('page_solution_4','โซลูชั่นไอทีอัจฉริยะ');
 define('page_solution_5','อ่านเพิ่มเติม');
 
+//Product.php
+define('page_product_1','ผลิตภัณฑ์');
+define('page_product_2','หน้าหลัก');
+define('page_product_3','ผลิตภัณฑ์');
+define('page_product_31','ผลิตภัณฑ์');
+define('page_product_4','ตัวอย่างผลิตภัณฑ์บางส่วนที่ wisepaq');
+
+//Product.php
+define('page_software_dev_1','การพัฒนาซอร์ฟเเวร์');
+define('page_software_dev_2','หน้าหลัก');
+define('page_software_dev_3','โซลูชั่น');
+define('page_software_dev_4','การพัฒนาซอร์ฟเเวร์');
+define('page_software_dev_41','การพัฒนาซอร์ฟเเวร์');
+define('page_software_dev_42','การพัฒนาด้านซอร์ฟเเวร์ของเรา');
+
+
 //contact.php
 define('page_contact_1','ติดต่อเรา');
 define('page_contact_2','หน้าหลัก');

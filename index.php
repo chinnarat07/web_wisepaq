@@ -149,8 +149,8 @@
                                 </div>
                                 <h4 class=" text-center"><?php echo $the_post_service_title; ?></h4>
                                 <span class="text-start pb-5 " style="text-indent: 2.5em;"><?php echo $the_post_description; ?></span>
-                                <a class="btn-slide mt-2 position-absolute" style="bottom: 10px; left: 10px;" href="service.php#<?php echo $the_post_service_subtitle;?>">
-                                    <i class="fa fa-arrow-right"></i>
+                                <a class="btn-slide  position-absolute" style="bottom: 10px; left: 10px;" href="service.php#<?php echo $the_post_service_subtitle;?>"> 
+                                <i class="fa fa-arrow-right"></i>
                                     <span><?php echo constant("page_content_6"); ?></span>
                                 </a>
                             </div>
@@ -284,8 +284,8 @@
 <!-- Projects Start -->
 <div class="container-xxl py-5">
     <div class="container">
-        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
-            <h5 class=" text-secondary"><?php echo constant("page_project_31") ?></h5>
+        <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h5 class=" text-secondary text-uppercase"><?php echo constant("page_project_31") ?></h5>
             <h1 class="display-6 mb-4"><?php echo constant("page_project_4") ?></h1>
         </div>
         <div class="row g-4 portfolio-container" >
@@ -308,21 +308,30 @@
                         $the_post_content = base64_decode($Row_project['post_content_thai']);
                     }
                     ?>
-                    <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp d-flex" data-wow-delay="<?php echo $count <= 0.5 ? $count . "s" : $count = 0.1 . "s" ?>" >
-                        <div class="rounded overflow-hidden flex-grow-1 d-flex flex-column position-relative">
-                            <div class="position-relative overflow-hidden " >
-                                <img class="img-fluid w-100" style="height: 330px; object-fit: cover;" src="<?php echo "admin/images/" . $the_post_image; ?>" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1 preview-link glightbox" title="<?php echo $the_post_project_title ?>"
-                                     href="<?php echo "admin/images/" . $the_post_image; ?>" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href="<?php echo $the_post_link_url; ?>" target="_blank"><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="border border-5 border-light border-top-0 p-4">
-                                <b><p class="text-dark fw-medium mb-0"><?php echo $the_post_project_title ?></p></b>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch portfolio-item wow fadeInUp mb-3" 
+                     data-wow-delay="<?php echo $count <= 0.5 ? $count . 's' : $count = 0.1 . 's'; ?>">
+                    <div class="card border-0 rounded overflow-hidden flex-grow-1">
+                        <!-- ภาพ -->
+                        <div class="position-relative overflow-hidden ">
+                            <img class="card-img-top img-fluid w-100" style="height: 330px; object-fit: cover;" 
+                                 src="<?php echo "admin/images/" . $the_post_image; ?>" alt="Image">
+                            <div class="portfolio-overlay d-flex justify-content-center align-items-center">
+                                <a class="btn btn-square btn-outline-light mx-1 preview-link glightbox" 
+                                   title="<?php echo $the_post_project_title; ?>" 
+                                   href="<?php echo "admin/images/" . $the_post_image; ?>" data-lightbox="portfolio">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="<?php echo $the_post_link_url; ?>" target="_blank">
+                                    <i class="fa fa-link"></i>
+                                </a>
                             </div>
                         </div>
+                        <!-- เนื้อหา -->
+                        <div class="card-body border border-5 border-light border-top-0 p-4"  >
+                            <h5 class="text-dark fw-bold text-center mb-2"><?php echo $the_post_project_title; ?></h5>
+                        </div>
                     </div>
+                </div>
                     <?php $count = $count + 0.2; ?>
                 <?php }
             }
@@ -415,7 +424,7 @@
     <!-- Team End -->
 
     <!-- Quote Start -->
-    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+    <div class="container-fluid bg-light overflow-hidden mt-5 px-lg-0">
         <div class="container quote px-lg-0">
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">

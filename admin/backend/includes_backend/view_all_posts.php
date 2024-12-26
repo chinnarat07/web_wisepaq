@@ -68,16 +68,16 @@ if (isset($_POST["apply"])) {
                     <a class="btn btn-primary" href="posts.php?source=add_post">Add New</a>
                 </div>
             </div>
-            <thead>
+            <thead >
                 <tr>
                     <th><input type='checkbox' id='selectAllBoxes' onclick="selectAll(this)"></th>
                     <th>ID</th>
                     <th style="width: 200px;">Title</th>
-                    <th style="width: 200px;">[ภาษาไทย] Title</th>                 
+                    <th style="width: 150px;">[ภาษาไทย] Title</th>                 
                     <th>Category</th>
-                    <th>[ภาษาไทย] Category</th>                  
+                    <th style="width: 150px;">[ภาษาไทย] Category</th>                  
                     <th>Status</th>
-                    <th>Image</th>
+                    <th style="width: 100px;">Image</th>
                     <th>Date</th>
                     <th>Action</th>
                 </tr>
@@ -112,9 +112,9 @@ if (isset($_POST["apply"])) {
                     <td>{$Row['post_status']}</td>
                     <td><img src='../images/{$Row['post_image']}' alt='image' width='100px'></td>
                     <td>{$Row['post_date']}</td>
-                    <td>
-                        <a onClick=\"javascript: return confirm('Are you sure you want to delete'); \" href='posts.php?deletePost=$the_post_id&image=$the_post_image'>Delete</a> 
-                        | <a href='posts.php?source=edit_post&p_id=$the_post_id'>Edit</a>
+                    <td class='text-center'>
+                        <a href='posts.php?source=edit_post&p_id=$the_post_id'><i class='fa fa-pencil-square-o fa-lg' aria-hidden='true'></i></a> | 
+                        <a onClick=\"javascript: return confirm('Are you sure you want to delete'); \" href='posts.php?deletePost=$the_post_id&image=$the_post_image'><i class='fa fa-trash-o fa-lg' aria-hidden='true'></i></a> 
                     </td>
                 </tr>";
                 }

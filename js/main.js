@@ -19,19 +19,27 @@
         selector: '.glightbox'
       });
      
-    $(".project").click(function(){
-        $(".content_project").slideToggle("fast");
-      }
-    )  ;
-
-    // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.sticky-top').addClass('shadow-sm').css('top', '0px');
+    // เมื่อโฮเวอร์ที่ลิงก์ .show-content
+     $('.container-project').on('mouseenter', function () {       
+        $(".project").css("width","100%");
+        $(".img-fluid-project").css("height","550px");
+        // ซ่อนเนื้อหาทั้งหมดก่อน
+        $('.content_project').hide();
+    
+        // แสดงเฉพาะเนื้อหาที่ตรงกับ ID
+        $('.content_project').fadeIn('slow');
+    }).on('mouseleave', function () {
+        // ซ่อนเนื้อหาทั้งหมดเมื่อเลิกโฮเวอร์
+        $('.content_project').slideUp('slow');
+        // ตรวจสอบขนาดหน้าจอ
+        if ($(window).width() > 768) {
+            $(".project").css("width", "50%");
         } else {
-            $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
+            $(".project").css("width", "100%"); // จอเล็กให้แสดงเต็ม
         }
+        $(".img-fluid-project").css("height","330px");
     });
+    
     
     
     // Back to top button

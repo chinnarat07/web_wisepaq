@@ -126,7 +126,7 @@ define('page_project_1','Project');
 define('page_project_2','HOME');
 define('page_project_3','PEOJECT');
 define('page_project_31','Project');
-define('page_project_4','Some project samples of Wisepaq do.');
+define('page_project_4','Some Project Samples Of Wisepaq Do');
 
 
 //Solution.php
@@ -136,6 +136,23 @@ define('page_solution_3','SOLUTION');
 define('page_solution_31','Solution');
 define('page_solution_4','Intelligent IT Solutions');
 define('page_solution_5','Read More');
+
+
+//product.php
+define('page_product_1','Product');
+define('page_product_2','HOME');
+define('page_product_3','PRODUCT');
+define('page_product_31','Product');
+define('page_product_4','Some Product Samples Of Wisepaq');
+
+//software_dev.php
+define('page_software_dev_1','Software Develop');
+define('page_software_dev_2','HOME');
+define('page_software_dev_3','SOLUTION');
+define('page_software_dev_4','SOFTWARE DEVELOP');
+define('page_software_dev_41','Software Develop');
+define('page_software_dev_42','Some Product Samples Of Wisepaq');
+
 
 //contact.php
 define('page_contact_1','Contact Us');
