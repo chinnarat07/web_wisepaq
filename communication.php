@@ -3,12 +3,12 @@
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 mb-5">
     <div class="container py-5">
-        <h1 class="display-3 text-white mb-3 animated slideInDown"><?php echo constant('page_software_dev_1') ?></h1>
+        <h1 class="display-3 text-white mb-3 animated slideInDown"><?php echo constant('page_communication_1') ?></h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item fs-5"><a class="text-white" href="index.php"><?php echo constant('page_software_dev_2') ?></a></li>
-                <li class="breadcrumb-item fs-5"><a class="text-white" href="solution.php"><?php echo constant('page_software_dev_3') ?></a></li>
-                <li class="breadcrumb-item fs-5 text-warning active" text-dark active" aria-current="page"><?php echo constant('page_software_dev_4') ?></li>
+                <li class="breadcrumb-item fs-5"><a class="text-white" href="index.php"><?php echo constant('page_communication_2') ?></a></li>
+                <li class="breadcrumb-item fs-5"><a class="text-white" href="solution.php"><?php echo constant('page_communication_3') ?></a></li>
+                <li class="breadcrumb-item fs-5 text-warning active" text-dark active" aria-current="page"><?php echo constant('page_communication_4') ?></li>
             </ol>
         </nav>
     </div>
@@ -67,9 +67,8 @@
 </div>
 <!-- About End -->
 
-<div class="container-fluid page-img pb-5 mb-5 ">
-    <div class="container pt-3 " style="padding-bottom: 12rem;">
-        <h1 class="display-5 text-center text-white mb-3 mt-1 animated slideInDown ">WISEPAQ FWD</h1>
+<div class="container-fluid page-commu py-5 mb-5 ">
+    <div class="container pt-3 " style="padding-bottom: 14rem;">
     </div>
 </div>
 

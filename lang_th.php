@@ -135,6 +135,11 @@ define('page_software_dev_4','การพัฒนาซอร์ฟเเว�
 define('page_software_dev_41','การพัฒนาซอร์ฟเเวร์');
 define('page_software_dev_42','การพัฒนาด้านซอร์ฟเเวร์ของเรา');
 
+//Communication.php
+define('page_communication_1','การสื่อสาร');
+define('page_communication_2','หน้าหลัก');
+define('page_communication_3','โซลูชั่น');
+define('page_communication_4','การสื่อสาร');
 
 //contact.php
 define('page_contact_1','ติดต่อเรา');

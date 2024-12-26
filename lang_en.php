@@ -153,6 +153,11 @@ define('page_software_dev_4','SOFTWARE DEVELOP');
 define('page_software_dev_41','Software Develop');
 define('page_software_dev_42','Some Product Samples Of Wisepaq');
 
+//communication.php
+define('page_communication_1','Communication');
+define('page_communication_2','HOME');
+define('page_communication_3','SOLUTION');
+define('page_communication_4','COMMUNICATION');
 
 //contact.php
 define('page_contact_1','Contact Us');

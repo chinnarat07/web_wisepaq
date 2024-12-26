@@ -252,6 +252,37 @@ body{
     background: url(../img/feightfarder-Photoroom.png)no-repeat;
     background-size: cover;
 }
+@media (max-width: 768px) { /* สำหรับหน้าจอขนาดเล็กกว่า 768px */
+    .page-img {
+        background: 
+            url(../img/feightfarder-Photoroom.png)no-repeat;
+        background-size: 100vh; /* ลดขนาดรูปภาพ */
+        height: auto; /* ปรับความสูงให้เหมาะสม */
+        background-size: contain; /* ขนาดปรับตามหน้าจอขนาดเล็ก */
+
+    }
+}
+
+.page-commu {
+    background: 
+        url(../img/5-Photoroom.png) no-repeat 10% center ,
+        url(../img/Unified-Communications_Solutions-Diagram__-Photoroom.png) no-repeat center ,
+        url(../img/commmu.png) no-repeat 90% center ;
+    background-color: #AAAAAA; /* กำหนดพื้นหลังสีเทา */
+    background-size: 400px; /* กำหนดขนาดของรูปภาพให้ทั้งสองรูป */
+    width: 100%; /* ขนาดขององค์ประกอบเต็มพื้นที่ */
+}
+@media (max-width: 768px) { /* สำหรับหน้าจอขนาดเล็กกว่า 768px */
+    .page-commu {
+        background: 
+            url(../img/5-Photoroom.png) no-repeat center top, 
+            url(../img/Unified-Communications_Solutions-Diagram__-Photoroom.png) no-repeat center center,
+            url(../img/commmu.png) no-repeat center bottom;
+        background-size: 300px; /* ลดขนาดรูปภาพ */
+        height: auto; /* ปรับความสูงให้เหมาะสม */
+    }
+}
+
 .breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
