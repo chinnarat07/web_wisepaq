@@ -67,7 +67,7 @@
 </div>
 <!-- About End -->
 
-<div class="container-fluid page-commu py-5 mb-5 ">
+<div class="container-fluid page-virtual py-5 mb-5 ">
     <div class="container pt-3 " style="padding-bottom: 14rem;">
     </div>
 </div>

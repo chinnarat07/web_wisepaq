@@ -137,6 +137,10 @@ body{
     .navbar-light .navbar-nav {
         border-top: 1px solid #EEEEEE;
     }
+
+    .nav-mobile-lang{
+        width: 100%;
+    }
 }
 
 .navbar-light .navbar-brand,
@@ -172,6 +176,21 @@ body{
         opacity: 1;
     }
 }
+/* ดรอปดาวน์สำหรับหน้าจอเล็ก */
+@media (max-width:992px) {
+    .navbar-nav .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+
+    .navbar-nav .dropdown-menu {
+        position: static; /* ป้องกันเมนูเลื่อนไปผิดตำแหน่ง */
+        float: none; /* ปรับเมนูให้อยู่ภายในเนื้อหา */
+        background-color: white; /* แก้สีพื้นหลังเมนู */
+     
+    }
+}
+
 
 
 /*** Header ***/
@@ -305,6 +324,12 @@ body{
     }
 }
 
+.page-virtual{
+background: url(../img/vi.png) no-repeat center;
+background-color: #AAAAAA;
+
+width: 100%;
+}
 
 .breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);

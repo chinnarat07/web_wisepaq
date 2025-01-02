@@ -147,6 +147,11 @@ define('page_virtualazation_2','หน้าหลัก');
 define('page_virtualazation_3','โซลูชั่น');
 define('page_virtualazation_4','การจำลองเสมือนจริง');
 
+//activity.php
+define('page_activity_1','กิจกรรม');
+define('page_activity_2','หน้าหลัก');
+define('page_activity_3','กิจกรรม');
+
 //contact.php
 define('page_contact_1','ติดต่อเรา');
 define('page_contact_2','หน้าหลัก');

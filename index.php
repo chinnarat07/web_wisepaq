@@ -149,8 +149,8 @@
                                 </div>
                                 <h4 class=" text-center"><?php echo $the_post_service_title; ?></h4>
                                 <span class="text-start pb-5 " style="text-indent: 2.5em;"><?php echo $the_post_description; ?></span>
-                                <a class="btn-slide  position-absolute" style="bottom: 10px; left: 10px;" href="service.php#<?php echo $the_post_service_subtitle;?>"> 
-                                <i class="fa fa-arrow-right"></i>
+                                <a class="btn-slide position-absolute" style="bottom: 10px; left: 10px;" href="service.php#<?php echo $the_post_service_subtitle;?>"> 
+                                <i class="fa fa-arrow-right " style="padding-bottom: 2px;"></i>
                                     <span><?php echo constant("page_content_6"); ?></span>
                                 </a>
                             </div>

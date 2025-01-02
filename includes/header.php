@@ -126,62 +126,67 @@ require 'vendor/autoload.php';
         </button>
         <div class="collapse navbar-collapse " id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <?php
-                $query = "SELECT * FROM  tbl_menu";
-                $fetch_data = mysqli_query($connection, $query);
+            <?php
+$current_page = basename($_SERVER['PHP_SELF']); // ดึงชื่อไฟล์ของหน้าปัจจุบัน
+$query = "SELECT * FROM tbl_menu";
+$fetch_data = mysqli_query($connection, $query);
 
-                if (mysqli_num_rows($fetch_data) == 0) {
-                    //echo "<h1 class='text-center'>No content Found</h1>";
-                } else {
-                    while ($Row = mysqli_fetch_assoc($fetch_data)) {
+if (mysqli_num_rows($fetch_data) == 0) {
+    //echo "<h1 class='text-center'>No content Found</h1>";
+} else {
+    while ($Row = mysqli_fetch_assoc($fetch_data)) {
+        $menu_id = $Row['menu_id'];
+        $menu_title = ($_SESSION['lang'] == 'en') ? $Row['menu_name'] : $Row['menu_name_thai'];
+        $link = $Row['link_name'];
 
-                        $menu_id = $Row['menu_id'];
-                        if ($_SESSION['lang'] == 'en') {
-                            $menu_title = $Row['menu_name'];
-                        } else {
-                            $menu_title = $Row['menu_name_thai'];
-                        }
-                        $link = $Row['link_name'];
+        $query_sub = "SELECT * FROM tbl_sub_menu WHERE menu_id = $menu_id";
+        $fetch_data_sub = mysqli_query($connection, $query_sub);
 
-                        $query_sub = "SELECT * FROM tbl_sub_menu where menu_id = $menu_id";
-                        $fetch_data_sub = mysqli_query($connection, $query_sub);
-
-                        if (mysqli_num_rows($fetch_data_sub) == 0) {
-                            //echo "<h1 class='text-center'>No content Found</h1>";
-                ?>
-                            <a href="<?php echo $link; ?>" class="nav-item nav-link  "><?php echo $menu_title; ?></a>
-
-                        <?php
-                        } else {
+        if (mysqli_num_rows($fetch_data_sub) == 0) {
+            // ไม่มีเมนูย่อย
+            ?>
+            <a href="<?php echo $link; ?>" class="nav-item nav-link <?php echo ($current_page == basename($link)) ? 'active' : ''; ?>">
+                <?php echo $menu_title; ?>
+            </a>
+            <?php
+        } else {
+            // มีเมนูย่อย
+            ?>
+            <div class="nav-item dropdown">
+                <a href="<?php echo $link; ?>" class="nav-link dropdown-toggle <?php echo ($current_page == basename($link)) ? 'active' : ''; ?>">
+                    <?php echo $menu_title; ?>
+                </a>
+                <div class="dropdown-menu fade-up m-0">
+                    <?php
+                    while ($Row_sub = mysqli_fetch_assoc($fetch_data_sub)) {
+                        $menu_title_sub = ($_SESSION['lang'] == 'en') ? $Row_sub['menu_subname'] : $Row_sub['menu_subname_thai'];
+                        $link_sub = $Row_sub['link_subname'];
                         ?>
-                            <div class="nav-item dropdown">
-                                <a href="<?php echo $link; ?>" class="nav-link dropdown-toggle active"><?php echo $menu_title; ?></a>
-                                <div class="dropdown-menu fade-up m-0">
-                                    <?php
-                                    while ($Row_sub = mysqli_fetch_assoc($fetch_data_sub)) {
-                                        if ($_SESSION['lang'] == 'en') {
-                                            $menu_title_sub = $Row_sub['menu_subname'];
-                                        } else {
-                                            $menu_title_sub = $Row_sub['menu_subname_thai'];
-                                        }
-                                        $link_sub = $Row_sub['link_subname'];
-                                    ?>
-                                        <a href="<?php echo $link_sub; ?>" class="dropdown-item "><?php echo $menu_title_sub ?></a>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                        <?php } ?>
-                <?php }
-                }
-                ?>
+                        <a href="<?php echo $link_sub; ?>" class="dropdown-item <?php echo ($current_page == basename($link_sub)) ? 'active' : ''; ?>">
+                            <?php echo $menu_title_sub; ?>
+                        </a>
+                        <?php
+                    }
+                    ?>
+                </div>
             </div>
-            <div class="btn-group btn-group-toggle me-4 " data-toggle="buttons">
-                <label class="btn btn-primary text-light">
-                    <input type="radio" style="appearance: none; " id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="th"> TH
-                </label>
-                <label class="btn btn-primary text-light active ">
-                    <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="en"> EN
-                </label>
+            <?php
+        }
+    }
+}
+?>
+
+            </div>
+            <div class="btn-group btn-group-toggle me-4 nav-mobile-lang" data-toggle="buttons">
+            <label class="btn btn-primary text-light ps-0 fs-6 <?php if ($_SESSION['lang'] == 'th') { echo 'active'; } ?>">
+    <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="th">
+    <img src="img/flag.png" alt="TH Flag" style="width: 23px; height: 23px; margin-left: 5px;"> TH
+</label>
+<label class="btn btn-primary text-light ps-1 fs-6 <?php if ($_SESSION['lang'] == 'en') { echo 'active'; } ?>">
+    <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="en">
+    <img src="img/united-kingdom.png" alt="EN Flag" style="width: 23px; height: 23px; margin-left: 0px;"> EN
+</label>
+
             </div>
 
     </nav>
@@ -191,4 +196,15 @@ require 'vendor/autoload.php';
             window.location.replace("?lang=" + value);
         }
     </script>
+
+    <script>
+    function click_menu(element) {
+        // ลบคลาส 'active' จากทุกเมนู
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => item.classList.remove('active'));
+        
+        // เพิ่มคลาส 'active' ให้กับเมนูที่ถูกคลิก
+        element.classList.add('active');
+    }
+</script>
     <!-- Navbar End -->
