@@ -159,6 +159,12 @@ define('page_communication_2','HOME');
 define('page_communication_3','SOLUTION');
 define('page_communication_4','COMMUNICATION');
 
+//virtualazation.php
+define('page_virtualazation_1','Virtualazation');
+define('page_virtualazation_2','HOME');
+define('page_virtualazation_3','SOLUTION');
+define('page_virtualazation_4','VIRTUALAZATION');
+
 //contact.php
 define('page_contact_1','Contact Us');
 define('page_contact_2','HOME');

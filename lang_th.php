@@ -141,6 +141,12 @@ define('page_communication_2','หน้าหลัก');
 define('page_communication_3','โซลูชั่น');
 define('page_communication_4','การสื่อสาร');
 
+//virtualazation.php
+define('page_virtualazation_1','การจำลองเสมือนจริง');
+define('page_virtualazation_2','หน้าหลัก');
+define('page_virtualazation_3','โซลูชั่น');
+define('page_virtualazation_4','การจำลองเสมือนจริง');
+
 //contact.php
 define('page_contact_1','ติดต่อเรา');
 define('page_contact_2','หน้าหลัก');
