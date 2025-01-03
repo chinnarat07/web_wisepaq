@@ -148,9 +148,10 @@ define('page_virtualazation_3','โซลูชั่น');
 define('page_virtualazation_4','การจำลองเสมือนจริง');
 
 //activity.php
-define('page_activity_1','กิจกรรม');
+define('page_activity_1','กิจกรรมและข่าวสาร');
 define('page_activity_2','หน้าหลัก');
-define('page_activity_3','กิจกรรม');
+define('page_activity_3','กิจกรรมและข่าวสาร');
+define('page_activity_4','กิจกรรมและข่าวสาร');
 
 //contact.php
 define('page_contact_1','ติดต่อเรา');

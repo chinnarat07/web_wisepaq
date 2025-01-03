@@ -166,9 +166,10 @@ define('page_virtualazation_3','SOLUTION');
 define('page_virtualazation_4','VIRTUALAZATION');
 
 //activity.php
-define('page_activity_1','Activity');
+define('page_activity_1','Activities & News');
 define('page_activity_2','HOME');
-define('page_activity_3','ACTIVITY');
+define('page_activity_3','ACTIVITY & NEW');
+define('page_activity_4','Activities & News');
 
 //contact.php
 define('page_contact_1','Contact Us');

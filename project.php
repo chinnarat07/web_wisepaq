@@ -54,12 +54,12 @@ while ($Row_project = mysqli_fetch_assoc($fetch_post_project)) {
                 <img class="card-img-top img-fluid img-fluid-project w-100" style="height: 330px; object-fit: cover;" 
                      src="<?php echo "admin/images/" . $the_post_image; ?>" alt="Image">
                 <div class="portfolio-overlay d-flex justify-content-center align-items-center">
-                    <a class="btn btn-square btn-outline-light mx-1 preview-link glightbox" 
+                    <a class="btn btn-square btn-outline-light ms-0 preview-link glightbox" 
                        title="<?php echo $the_post_project_title; ?>" 
                        href="<?php echo "admin/images/" . $the_post_image; ?>" data-lightbox="portfolio">
                         <i class="fa fa-eye"></i>
                     </a>
-                    <a class="btn btn-square btn-outline-light mx-1" href="<?php echo $the_post_link_url; ?>" target="_blank">
+                    <a class="btn btn-square btn-outline-light" style="margin:22.5px 0px 0px 90px;" href="<?php echo $the_post_link_url; ?>" target="_blank">
                         <i class="fa fa-link"></i>
                     </a>
                 </div>

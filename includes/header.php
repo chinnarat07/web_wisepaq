@@ -117,7 +117,7 @@ require 'vendor/autoload.php';
     <!-- Topbar End -->
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 ">
+    <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light  p-0 ">
         <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 "><img src="img/wisepaq.jpg" alt="" width="60" height="60" style="margin-right: 5px;">WISEPAQ</h2>
         </a>
@@ -125,70 +125,74 @@ require 'vendor/autoload.php';
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarCollapse">
+            
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <?php
-$current_page = basename($_SERVER['PHP_SELF']); // ดึงชื่อไฟล์ของหน้าปัจจุบัน
-$query = "SELECT * FROM tbl_menu";
-$fetch_data = mysqli_query($connection, $query);
+                <?php
+                $current_page = basename($_SERVER['PHP_SELF']); // ดึงชื่อไฟล์ของหน้าปัจจุบัน
+                $query = "SELECT * FROM tbl_menu";
+                $fetch_data = mysqli_query($connection, $query);
 
-if (mysqli_num_rows($fetch_data) == 0) {
-    //echo "<h1 class='text-center'>No content Found</h1>";
-} else {
-    while ($Row = mysqli_fetch_assoc($fetch_data)) {
-        $menu_id = $Row['menu_id'];
-        $menu_title = ($_SESSION['lang'] == 'en') ? $Row['menu_name'] : $Row['menu_name_thai'];
-        $link = $Row['link_name'];
+                if (mysqli_num_rows($fetch_data) == 0) {
+                    //echo "<h1 class='text-center'>No content Found</h1>";
+                } else {
+                    while ($Row = mysqli_fetch_assoc($fetch_data)) {
+                        $menu_id = $Row['menu_id'];
+                        $menu_title = ($_SESSION['lang'] == 'en') ? $Row['menu_name'] : $Row['menu_name_thai'];
+                        $link = $Row['link_name'];
 
-        $query_sub = "SELECT * FROM tbl_sub_menu WHERE menu_id = $menu_id";
-        $fetch_data_sub = mysqli_query($connection, $query_sub);
+                        $query_sub = "SELECT * FROM tbl_sub_menu WHERE menu_id = $menu_id";
+                        $fetch_data_sub = mysqli_query($connection, $query_sub);
 
-        if (mysqli_num_rows($fetch_data_sub) == 0) {
-            // ไม่มีเมนูย่อย
-            ?>
-            <a href="<?php echo $link; ?>" class="nav-item nav-link <?php echo ($current_page == basename($link)) ? 'active' : ''; ?>">
-                <?php echo $menu_title; ?>
-            </a>
-            <?php
-        } else {
-            // มีเมนูย่อย
-            ?>
-            <div class="nav-item dropdown">
-                <a href="<?php echo $link; ?>" class="nav-link dropdown-toggle <?php echo ($current_page == basename($link)) ? 'active' : ''; ?>">
-                    <?php echo $menu_title; ?>
-                </a>
-                <div class="dropdown-menu fade-up m-0">
-                    <?php
-                    while ($Row_sub = mysqli_fetch_assoc($fetch_data_sub)) {
-                        $menu_title_sub = ($_SESSION['lang'] == 'en') ? $Row_sub['menu_subname'] : $Row_sub['menu_subname_thai'];
-                        $link_sub = $Row_sub['link_subname'];
-                        ?>
-                        <a href="<?php echo $link_sub; ?>" class="dropdown-item <?php echo ($current_page == basename($link_sub)) ? 'active' : ''; ?>">
-                            <?php echo $menu_title_sub; ?>
-                        </a>
+                        if (mysqli_num_rows($fetch_data_sub) == 0) {
+                            // ไม่มีเมนูย่อย
+                ?>
+                            <a href="<?php echo $link; ?>" class="nav-item nav-link <?php echo ($current_page == basename($link)) ? 'active' : ''; ?>">
+                                <?php echo $menu_title; ?>
+                            </a>
                         <?php
+                        } else {
+                            // มีเมนูย่อย
+                        ?>
+                            <div class="nav-item dropdown">
+                                <a href="<?php echo $link; ?>" class="nav-link dropdown-toggle <?php echo ($current_page == basename($link)) ? 'active' : ''; ?>">
+                                    <?php echo $menu_title; ?>
+                                </a>
+                                <div class="dropdown-menu fade-up m-0">
+                                    <?php
+                                    while ($Row_sub = mysqli_fetch_assoc($fetch_data_sub)) {
+                                        $menu_title_sub = ($_SESSION['lang'] == 'en') ? $Row_sub['menu_subname'] : $Row_sub['menu_subname_thai'];
+                                        $link_sub = $Row_sub['link_subname'];
+                                    ?>
+                                        <a href="<?php echo $link_sub; ?>" class="dropdown-item <?php echo ($current_page == basename($link_sub)) ? 'active' : ''; ?>">
+                                            <?php echo $menu_title_sub; ?>
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                <?php
+                        }
                     }
-                    ?>
-                </div>
-            </div>
-            <?php
-        }
-    }
-}
-?>
+                }
+                ?>
 
             </div>
             <div class="btn-group btn-group-toggle me-4 nav-mobile-lang" data-toggle="buttons">
-            <label class="btn btn-primary text-light ps-0 fs-6 <?php if ($_SESSION['lang'] == 'th') { echo 'active'; } ?>">
-    <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="th">
-    <img src="img/flag.png" alt="TH Flag" style="width: 23px; height: 23px; margin-left: 5px;"> TH
-</label>
-<label class="btn btn-primary text-light ps-1 fs-6 <?php if ($_SESSION['lang'] == 'en') { echo 'active'; } ?>">
-    <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="en">
-    <img src="img/united-kingdom.png" alt="EN Flag" style="width: 23px; height: 23px; margin-left: 0px;"> EN
-</label>
-
+                <label class="btn btn-primary text-light ps-0 fs-6 <?php if ($_SESSION['lang'] == 'th') {
+                                                                        echo 'active';
+                                                                    } ?>">
+                    <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="th">
+                    <img src="img/flag.png" alt="TH Flag" style="width: 23px; height: 23px; margin-left: 5px;"> TH
+                </label>
+                <label class="btn btn-primary text-light ps-1 fs-6 <?php if ($_SESSION['lang'] == 'en') {
+                                                                        echo 'active';
+                                                                    } ?>">
+                    <input type="radio" style="appearance: none;" id='select_lang' onchange="change_lang(this.value)" autocomplete="off" value="en">
+                    <img src="img/united-kingdom.png" alt="EN Flag" style="width: 23px; height: 23px; margin-left: 0px;"> EN
+                </label>
             </div>
-
+</div>
     </nav>
     <!-- Scripts -->
     <script>
@@ -198,13 +202,13 @@ if (mysqli_num_rows($fetch_data) == 0) {
     </script>
 
     <script>
-    function click_menu(element) {
-        // ลบคลาส 'active' จากทุกเมนู
-        const menuItems = document.querySelectorAll('.menu-item');
-        menuItems.forEach(item => item.classList.remove('active'));
-        
-        // เพิ่มคลาส 'active' ให้กับเมนูที่ถูกคลิก
-        element.classList.add('active');
-    }
-</script>
+        function click_menu(element) {
+            // ลบคลาส 'active' จากทุกเมนู
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => item.classList.remove('active'));
+
+            // เพิ่มคลาส 'active' ให้กับเมนูที่ถูกคลิก
+            element.classList.add('active');
+        }
+    </script>
     <!-- Navbar End -->

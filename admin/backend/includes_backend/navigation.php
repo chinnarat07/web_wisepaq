@@ -8,11 +8,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">WISEPAQ  <small><?php echo $_SESSION['username'] ?></small></a>
+        <a class="navbar-brand" href="index.php"><b>WISEPAQ</b><span style="font-size: 18px;">admin</span></a>
+        <!-- <a class="navbar-brand" href="index.php">WISEPAQ  <small><?php echo $_SESSION['username'] ?></small></a> -->
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
-        <li><a href="../index.php">Login Page</a></li>
+        <li><a href="../../index.php">Website</a></li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['username'] ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">

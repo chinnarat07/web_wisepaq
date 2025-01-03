@@ -9,6 +9,7 @@ if (isset($_POST['update_post'], $_GET['p_id'])) {
     $post_link_url = $_POST['link_url'];
     $post_category_id = $_POST['post_category'];
     $post_status = $_POST['post_status'];
+    $post_pin = $_POST['post_pin'];
 
     $post_content = base64_encode($_POST['post_content']);
     $post_content_thai = base64_encode($_POST['post_content_thai']);
@@ -36,6 +37,7 @@ if (isset($_POST['update_post'], $_GET['p_id'])) {
     $query .= "post_subtitle='$post_subtitle', ";
     $query .= "post_subtitle_thai='$post_subtitle_thai', ";
     $query .= "post_link='$post_link_url', ";
+    $query .= "post_pin='$post_pin', ";
     $query .= "post_date='$post_date', ";
     $query .= !empty($post_image) ? "post_image='$post_image', " : null;
     $query .= "post_content='$post_content', ";
@@ -68,12 +70,13 @@ if (isset($_GET['p_id'])) {
         $post_link_url = $Row['post_link'];
         $post_category_id = $Row['post_category_id'];
         $post_status = $Row['post_status'];
+        $post_pin = $Row['post_pin'];
         $post_image_old = $Row['post_image'];
         $post_image = $Row['post_image'];
         $post_date = $Row['post_date'];
         $post_content = base64_decode($Row['post_content']);
         $post_content_thai = base64_decode($Row['post_content_thai']);
-        ?>
+?>
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Post Title</label>
@@ -98,23 +101,23 @@ if (isset($_GET['p_id'])) {
                 <label for="link">Link Url</label>
                 <input type="text" class="form-control" value="<?php echo $post_link_url ?>" name="link_url">
             </div>
-            
+
             <div class="form-group">
                 <label for="post_category">Post Category ID</label>
                 <select class="form-control" name="post_category" id="post_category">
-        <?php
-        $query = "SELECT * FROM tbl_categories";
-        $fetch_data = mysqli_query($connection, $query);
-        while ($Row = mysqli_fetch_assoc($fetch_data)) {
-            $cat_id = $Row["cat_id"];
-            $cat_title = $Row["cat_title"];
-            $cat_title_thai = $Row["cat_title_thai"];
-            $selected = ($cat_id == $post_category_id) ? 'selected' : '';
-            if (isset($cat_title)) {
-                echo "<option value='" . $cat_id . "' " . $selected . ">" . $cat_title . "</option>";
-            }
-        }
-        ?>
+                    <?php
+                    $query = "SELECT * FROM tbl_categories";
+                    $fetch_data = mysqli_query($connection, $query);
+                    while ($Row = mysqli_fetch_assoc($fetch_data)) {
+                        $cat_id = $Row["cat_id"];
+                        $cat_title = $Row["cat_title"];
+                        $cat_title_thai = $Row["cat_title_thai"];
+                        $selected = ($cat_id == $post_category_id) ? 'selected' : '';
+                        if (isset($cat_title)) {
+                            echo "<option value='" . $cat_id . "' " . $selected . ">" . $cat_title . "</option>";
+                        }
+                    }
+                    ?>
                 </select>
             </div>
 
@@ -122,10 +125,22 @@ if (isset($_GET['p_id'])) {
                 <label for="post_status">Post Status</label>
                 <select class="form-control" name="post_status" id="post_category">
                     <option value='<?php echo $post_status; ?>'><?php echo $post_status; ?></option>
-        <?php if ($post_status === "Published") { ?>
+                    <?php if ($post_status === "Published") { ?>
                         <option value='Draft'>Draft</option>
                     <?php } else { ?>
                         <option value='Published'>Published</option>
+                    <?php } ?>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="post_pin">Post Pin</label>
+                <select class="form-control" name="post_pin" id="post_category">
+                    <option value='<?php echo $post_pin; ?>'><?php echo ($post_pin === "1") ? "Important" : "Unimportant"; ?></option>
+                    <?php if ($post_pin === "1") { ?>
+                        <option value='0'>Unimportant</option>
+                    <?php } else { ?>
+                        <option value='1'>Important</option>
                     <?php } ?>
                 </select>
             </div>
@@ -151,30 +166,30 @@ if (isset($_GET['p_id'])) {
                     CKEDITOR.config.height = "700px";
                 </script>
             </div>
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="post_content_thai">[ภาษาไทย] Post Content</label>
-            <textarea id="editor2" name="post_content_thai" class="form-control">
+            <div class="form-group">
+                <label for="post_content_thai">[ภาษาไทย] Post Content</label>
+                <textarea id="editor2" name="post_content_thai" class="form-control">
         <?php echo $post_content_thai; ?>
             </textarea>
-            <script>
-                CKEDITOR.dtd.$removeEmpty['i'] = false;
-                CKEDITOR.dtd.$removeEmpty['span'] = false;
+                <script>
+                    CKEDITOR.dtd.$removeEmpty['i'] = false;
+                    CKEDITOR.dtd.$removeEmpty['span'] = false;
 
-                CKEDITOR.replace('editor2');
+                    CKEDITOR.replace('editor2');
 
-                CKEDITOR.config.width = "100%";
-                CKEDITOR.config.height = "700px";
-            </script>
-        </div>
-        </div>
+                    CKEDITOR.config.width = "100%";
+                    CKEDITOR.config.height = "700px";
+                </script>
+            </div>
+            </div>
 
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" name="update_post" value="Update">
-        </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" name="update_post" value="Update">
+            </div>
         </form>
-    <?php
+<?php
     }
 }
 ?>

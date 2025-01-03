@@ -102,7 +102,7 @@ while ($Row_product = mysqli_fetch_assoc($fetch_post_product)) {
         <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
             <h1 class="display-6 mb-4"><?php echo $the_post_product_title; ?></h1>
         </div>
-        <div class="row g-4 portfolio-container container-project">
+        <div class="row g-4">
             <div class="container">
                 <div class="row">
                     <?php echo $the_post_content; ?>

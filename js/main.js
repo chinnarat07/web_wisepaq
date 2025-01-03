@@ -40,8 +40,26 @@
         $(".img-fluid-project").css("height","330px");
     });
     
-    
-    
+    // star stiky
+    const whiteStar = "img/star.png"; // ดาวสีขาว
+    const yellowStar = "img/star (1).png"; // ดาวสีเหลือง
+    const whiteStarBorder = "img/star (2).png"; // ดาวสีขาวขอบดำ
+
+    let currentImage = whiteStar; // เริ่มต้นเป็นดาวสีขาว
+
+            $("#myStar")
+                .mousedown(function () { // เมื่อกดเมาส์
+                    $(this).attr("src", whiteStarBorder); // เปลี่ยนเป็นดาวสีขาวขอบดำ
+                })
+                .mouseup(function () { // เมื่อปล่อยเมาส์
+                    if (currentImage === whiteStar) {
+                        $(this).attr("src", yellowStar); // เปลี่ยนเป็นดาวสีเหลือง
+                        currentImage = yellowStar;
+                    } else {
+                        $(this).attr("src", whiteStar); // เปลี่ยนเป็นดาวสีขาว
+                        currentImage = whiteStar;
+                    }
+                });
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {

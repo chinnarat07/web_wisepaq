@@ -21,7 +21,7 @@
             <h5 class=" text-secondary"><?php echo constant("page_product_31") ?></h5>
             <h1 class="display-6 mb-4"><?php echo constant("page_product_4") ?></h1>
         </div>
-        <div class="row g-4 portfolio-container container-project" >
+        <div class="row g-4 " >
         <div class="container">
     <div class="row">
         <?php
